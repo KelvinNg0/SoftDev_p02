@@ -5,10 +5,11 @@ P02 -- The End
 
 Project 2 DEVLOG
 
-firstL -- 2019-mm-dd hh:mm
-
 kelvinN -- 2019-12-19 19:21
   - repo created
 
 kelvinN -- 2019-12-20 08:35
   - init app.py and devlog
+  
+kevinL -- 2020-01-02 18:35
+  - README init since we have an idea now
