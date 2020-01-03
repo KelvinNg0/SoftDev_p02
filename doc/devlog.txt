@@ -17,8 +17,11 @@ kevinL -- 2020-01-02 18:35
 kevinL -- 2020-01-02 20:00
   - Database layout tables
 
-kelvinN -- 2020-1-03 8:28
+kelvinN -- 2020-01-03 08:28
   - updated README
+
+kevinL -- 2020-01-03 08:30
+  - Preliminary site map
 
 kelvinN -- 2020-1-03 9:46
   - added current (incomplete) version of design.pdf
