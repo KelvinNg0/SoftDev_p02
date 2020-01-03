@@ -3,13 +3,15 @@
 **Roster/Roles**
 - Kelvin Ng: Project Manager
 - Tanzim Elahi
-  - Backend (database) or frontend (templates, routes, styling with Bootstrap) [pick one]
+  - Backend (database and accounts)
+  - JavaScript necessary for clicking the cookie and purchasing perks
 - Kevin Li
   - Interfacing with the API to retrieve the necessary data
-  - Backend (database) or frontend (templates, routes, styling with Bootstrap) [pick one]
+  - Backend interactions with the frontend cookie clicker
 - Justin Shaw
   - JavaScript necessary for clicking the cookie and purchasing perks
-  
+  - frontend (templates, routes, styling with Bootstrap)
+
 ## Website Description
 Leaderboard data is fetched from the [speedrun.com REST API](https://docs.google.com/document/d/1Hk-0V1E2hvxjx1BrCcwk33yCHaMnbO_hza4GzxjVcZM).
 
@@ -24,7 +26,7 @@ You must install the pip modules listed in the /doc/requirements.txt file. To do
 pip install -r <location of requirements.txt file>
 ```
 
-The -r flag is necessary to distinguish it from a typical pip install. Without the -r, pip will look for a package online called "requirements.txt". That is obviously not desirable. 
+The -r flag is necessary to distinguish it from a typical pip install. Without the -r, pip will look for a package online called "requirements.txt". That is obviously not desirable.
 
 Note that on certain systems (like the school computers), the pip command may be restricted. To get around this, create a virtual environment with:
 ```bash
@@ -36,7 +38,7 @@ To activate the virtual environment, cd into the directory you created the envir
 
 **Run the program**
 
-After installing the required dependencies, all you need to do to run the program is to type into a terminal session: 
+After installing the required dependencies, all you need to do to run the program is to type into a terminal session:
 ```bash
 python3 app.py
 ```
