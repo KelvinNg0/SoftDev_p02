@@ -25,3 +25,6 @@ kevinL -- 2020-01-03 08:30
 
 kelvinN -- 2020-1-03 9:46
   - added current (incomplete) version of design.pdf
+
+kevinL -- 2020-01-04 15:04
+  - Component map
