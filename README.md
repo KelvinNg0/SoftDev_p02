@@ -10,7 +10,7 @@
   - Backend interactions with the frontend cookie clicker
 - Justin Shaw
   - JavaScript necessary for clicking the cookie and purchasing perks
-  - frontend (templates, routes, styling with Bootstrap)
+  - Frontend (templates, routes, styling with Bootstrap)
 
 ## Website Description
 Leaderboard data is fetched from the [speedrun.com REST API](https://docs.google.com/document/d/1Hk-0V1E2hvxjx1BrCcwk33yCHaMnbO_hza4GzxjVcZM).
