@@ -28,3 +28,6 @@ kelvinN -- 2020-1-03 9:46
 
 kevinL -- 2020-01-04 15:04
   - Component map
+
+kelvinN -- 2020-01-04 15:17
+  - design doc complete
