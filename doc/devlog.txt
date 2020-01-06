@@ -31,3 +31,9 @@ kevinL -- 2020-01-04 15:04
 
 kelvinN -- 2020-01-04 15:17
   - design doc complete
+
+kevinL -- 2020-01-06 18:40
+  - Design doc updates
+    - Only update clicks every 15 seconds + save progress button
+    - Expand on PM's role
+    - Extra notes in the database section
