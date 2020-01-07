@@ -19,6 +19,7 @@ kevinL -- 2020-01-02 20:00
 
 kelvinN -- 2020-01-03 08:28
   - updated README
+  - API KB card pdf added
 
 kevinL -- 2020-01-03 08:30
   - Preliminary site map
@@ -32,8 +33,10 @@ kevinL -- 2020-01-04 15:04
 kelvinN -- 2020-01-04 15:17
   - design doc complete
 
-kevinL -- 2020-01-06 18:40
-  - Design doc updates
+kelvinN -- 2020-01-07 8:13
+  - Design doc updated
     - Only update clicks every 15 seconds + save progress button
     - Expand on PM's role
     - Extra notes in the database section
+  - requirements.txt
+  - TODO for today: html templates + login, registeration, sessions, and init dbs
