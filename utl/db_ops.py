@@ -34,6 +34,7 @@ def init_db():
         )
         """
     )
+    add_perks()
 
     #Create achievements table (empty)
     c.execute(
@@ -49,5 +50,18 @@ def init_db():
     db.commit() #save changes
     db.close()
 
+
+def add_perks():
+    #In order: ID, name of perk, description of perk, cost of perk
+    c.execute(
+        """
+        INSERT INTO perks VALUES (?, ?, ?, ?),
+          (0,
+          "Autoclicker 1",
+          "Generates clicks while idle!",
+          50
+          )
+        """
+    )
 
 init_db();
