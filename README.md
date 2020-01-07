@@ -2,6 +2,8 @@
 
 **Roster/Roles**
 - Kelvin Ng: Project Manager
+  - Update README/make sure design doc is current
+  - Minor coding tasks if necessary
 - Tanzim Elahi
   - Backend (database and accounts)
   - JavaScript necessary for clicking the cookie and purchasing perks
