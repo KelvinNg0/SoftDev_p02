@@ -9,7 +9,10 @@ app = Flask(__name__)
 def home():
 	return "Hello World!"
 
+@app.route('/clicker')
+def clicker():
+	return render_template("clicker.html")
+
 if __name__ == "__main__":
 	app.debug = True;
 	app.run();
-
