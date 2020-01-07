@@ -1,4 +1,4 @@
-#Run this file to generate an empty database file. Do not run this in any other case.
+#========= ONLY RUN THIS FILE IF YOU WANT TO CREATE AN EMPTY DATABASE. ========#
 
 import sqlite3
 from datetime import datetime #for timestamps
@@ -66,5 +66,22 @@ def add_perks():
     db.commit() #save changes
     db.close()
 
+def add_achievements():
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+
+    #In order: ID, name of achievement, description of achievement
+    c.execute("INSERT INTO achievements VALUES (?, ?, ?)", (0, "Fast Fingers", "Click more than 60 times a minute."))
+    c.execute("INSERT INTO achievements VALUES (?, ?, ?)", (1, "Speed Demon!", "Click more than 120 times a minute."))
+    c.execute("INSERT INTO achievements VALUES (?, ?, ?)", (2, "Consumer", "Spend a total of 50 clicks at the shop."))
+    c.execute("INSERT INTO achievements VALUES (?, ?, ?)", (3, "Capitalist", "Spend a total of 1000 clicks at the shop."))
+    c.execute("INSERT INTO achievements VALUES (?, ?, ?)", (4, "Get perked up!", "Purchase at least 5 perks."))
+    c.execute("INSERT INTO achievements VALUES (?, ?, ?)", (5, "Autoclicking Specialist", "Purchase all of the autoclickers at the shop."))
+
+    db.commit() #save changes
+    db.close()
+
+#Run this file to generate an empty database file. Do not run this in any other case.init_db();
 init_db();
 add_perks();
+add_achievements();
