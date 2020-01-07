@@ -24,7 +24,7 @@ kelvinN -- 2020-01-03 08:28
 kevinL -- 2020-01-03 08:30
   - Preliminary site map
 
-kelvinN -- 2020-1-03 9:46
+kelvinN -- 2020-01-03 09:46
   - added current (incomplete) version of design.pdf
 
 kevinL -- 2020-01-04 15:04
@@ -33,10 +33,15 @@ kevinL -- 2020-01-04 15:04
 kelvinN -- 2020-01-04 15:17
   - design doc complete
 
-kelvinN -- 2020-01-07 8:13
+kelvinN -- 2020-01-07 08:13
   - Design doc updated
     - Only update clicks every 15 seconds + save progress button
     - Expand on PM's role
     - Extra notes in the database section
   - requirements.txt
   - TODO for today: html templates + login, registeration, sessions, and init dbs
+  
+kevinL -- 2020-01-07 08:30
+  - Created functions that initialized the database
+  - Now working on individual perks/achievements
+   
