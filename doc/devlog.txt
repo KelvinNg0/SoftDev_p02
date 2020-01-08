@@ -40,8 +40,19 @@ kelvinN -- 2020-01-07 08:13
     - Extra notes in the database section
   - requirements.txt
   - TODO for today: html templates + login, registeration, sessions, and init dbs
-  
+
 kevinL -- 2020-01-07 08:30
   - Created functions that initialized the database
   - Now working on individual perks/achievements
-   
+
+shawJ -- 2020-01-07 8:34
+  - Started HTML template
+
+shawJ -- 2020-01-07 4:53
+  - Began organizing the page and working in Bootstraps
+
+shawJ -- 2020-01-07 6:35
+  - Custom CSS work
+
+shawJ -- 2020-01-07 9:59
+  - Dynamic javascript for cookie hover animation
