@@ -45,14 +45,20 @@ kevinL -- 2020-01-07 08:30
   - Created functions that initialized the database
   - Now working on individual perks/achievements
 
-shawJ -- 2020-01-07 8:34
+shawJ -- 2020-01-07 08:34
   - Started HTML template
 
-shawJ -- 2020-01-07 4:53
+shawJ -- 2020-01-07 16:53
   - Began organizing the page and working in Bootstraps
 
-shawJ -- 2020-01-07 6:35
+shawJ -- 2020-01-07 18:35
   - Custom CSS work
 
-shawJ -- 2020-01-07 9:59
+shawJ -- 2020-01-07 21:59
   - Dynamic javascript for cookie hover animation
+
+kevinL -- 2020-01-07 (17:00 onwards)
+  - Added basic perk rows like autoclickers and added achievements
+  - Home, login, logout, register routes
+    - Templates for those
+    - Will want to include a "confirm password" feature for registration
