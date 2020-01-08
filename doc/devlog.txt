@@ -39,8 +39,8 @@ kelvinN -- 2020-01-07 08:13
     - Expand on PM's role
     - Extra notes in the database section
   - requirements.txt
-  - TODO for today: html templates + login, registeration, sessions, and init dbs
-
+  
+ 
 kevinL -- 2020-01-07 08:30
   - Created functions that initialized the database
   - Now working on individual perks/achievements
@@ -72,3 +72,8 @@ kelvinN -- 2020-01-08 08:15
 
 kelvinN -- 2020-01-08 08:36
   - created leaderboards, shop, and profile routes
+  
+ Tanzim Elahi---2020-08-2020 9:02
+  -Created database functions
+  -Caught up with all the stuff that I missed due to illness
+  - TODO for today: html templates + login, registeration, sessions, and init dbs
