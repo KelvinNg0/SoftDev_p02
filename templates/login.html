@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>Sign in to access this website</h3>
+  <form action="/login" method="post">
+    Username: <input type="text" name="user" required="required">
+    <br><br>
+    <!-- &nbsp; is a non-breaking space -->
+    Password:&nbsp; <input type="password" name="pw" required="required">
+    <br><br>
+    <input type="submit" values="Submit">
+    <br><br>
+  </form>
+{% endblock %}
