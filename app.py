@@ -25,7 +25,6 @@ file.close()
 def home():
 	if 'username' in session:
 		print("Session username: " + session['username'])
-		flash("You are logged in.")
 		return render_template("clicker.html", title = "Cookie Clicker")
 
 	return render_template("login.html", title = "Login")
@@ -51,6 +50,11 @@ def signup():
 def register():
 	username = request.form.get('user')
 	password = request.form.get('pw')
+	confirm_password = request.form.get('confirmpw')
+
+	if (password != confirm_password):
+		flash("The two passwords do not match.")
+		return redirect(url_for('signup'))
 
 	if (db_ops.accountExists(username)):
 		flash("This username is already in use. Try another one.")
@@ -72,7 +76,24 @@ def logout():
 
 @app.route('/clicker')
 def clicker():
+	if 'username' not in session: #checks if user is logged in before allowing access to page
+		return redirect('/')
 	return render_template("clicker.html")
+
+@app.route('/shop')
+def shop():
+	return 0
+	#return render_template("shop.html")
+
+@app.route('/profile')
+def profile():
+	return 0
+	#return render_template("profile.html")
+
+@app.route('/leaderboards')
+def leaderboards():
+	return 0
+	#return render_template("leaderboards.html")
 
 if __name__ == "__main__":
 	app.debug = True;
