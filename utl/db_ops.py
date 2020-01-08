@@ -7,7 +7,7 @@ def accountExists(username):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
-    c.execute("SELECT * FROM accounts WHERE username = (?)", (user,))
+    c.execute("SELECT * FROM accounts WHERE username = (?)", (username,))
     rowCount = 0
     for row in c:
         rowCount += 1
@@ -38,9 +38,9 @@ def authenticate(username, password):
     c.execute("SELECT * FROM accounts WHERE username = (?)", (username,))
     rowCount = 0
     for row in c:
-        db.close() #only one iteration should happen anyway
         rowCount += 1
 
+    db.close()
     if (rowCount != 1):
         return False
 

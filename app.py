@@ -2,6 +2,7 @@ from flask import *
 import os #for generating a secret key
 import urllib.request
 import json
+from utl import db_ops
 
 app = Flask(__name__)
 
@@ -22,10 +23,10 @@ file.close()
 #If logged in: show clicker page, else login page
 @app.route('/')
 def home():
-	if 'user' in session:
-		print("Session username: " + session['user'])
+	if 'username' in session:
+		print("Session username: " + session['username'])
 		flash("You are logged in.")
-		return render_template("clicker.html")
+		return render_template("clicker.html", title = "Cookie Clicker")
 
 	return render_template("login.html", title = "Login")
 
@@ -33,13 +34,31 @@ def home():
 def login():
 	username = request.form.get('user')
 	password = request.form.get('pw')
-	return "a"
 
-@app.route("/register")
+	if (db_ops.authenticate(username, password)):
+		session['username'] = username
+		return redirect(url_for('home')) #should trigger if statement in home route
+
+	flash("Failed to log in. The username/password combination provided did not match any accounts.")
+	return redirect(url_for('home'))
+
+#Need this route since the anchor element on the login page for creating an account links to this
+@app.route("/signup")
+def signup():
+	return render_template("register.html", title = "Register")
+
+@app.route("/register", methods=['POST'])
 def register():
 	username = request.form.get('user')
 	password = request.form.get('pw')
-	return "a"
+
+	if (db_ops.accountExists(username)):
+		flash("This username is already in use. Try another one.")
+		return redirect(url_for('signup'))
+
+	db_ops.addAccount(username, password)
+	flash("You have successfully created your account. Please sign in now.")
+	return redirect(url_for('home'))
 
 if __name__ == "__main__":
 	app.debug = True;
