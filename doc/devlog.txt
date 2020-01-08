@@ -33,14 +33,16 @@ kevinL -- 2020-01-04 15:04
 kelvinN -- 2020-01-04 15:17
   - design doc complete
 
-kelvinN -- 2020-01-07 08:13
+kevinL -- 2020-01-06 18:00
   - Design doc updated
     - Only update clicks every 15 seconds + save progress button
     - Expand on PM's role
     - Extra notes in the database section
   - requirements.txt
-  - TODO for today: html templates + login, registeration, sessions, and init dbs
-  
+ 
+kelvinN -- 2020-01-07 08:13
+  - Updated README to be in line with design doc specifications
+  - TODO for today: html templates + login, registration, sessions, and init dbs
  
 kevinL -- 2020-01-07 08:30
   - Created functions that initialized the database
@@ -76,6 +78,6 @@ kevinL -- 2019-01-08 08:20
 kelvinN -- 2020-01-08 08:36
   - created leaderboards, shop, and profile routes
   
- tanzimE ---2020-01-08 09:02
+tanzimE ---2020-01-08 09:02
   - Created database functions
   - Caught up with all the stuff that I missed due to illness
