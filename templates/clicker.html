@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container">
-    <img src="static/cookie.png">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="col1">
+          <div style="height:30%;"></div>
+            <div class="cookie">
+              <img src="static/cookie.png" class="cookie-img">
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        row2
+      </div>
+      <div class="col-sm-3">
+        row3
+      </div>
+    </div>
+
   </div>
 {% endblock %}
