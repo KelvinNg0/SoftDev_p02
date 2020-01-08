@@ -2,6 +2,7 @@ from flask import *
 import os #for generating a secret key
 import urllib.request
 import json
+from functools import wraps
 from utl import db_ops
 
 app = Flask(__name__)
@@ -20,16 +21,31 @@ else: #don't want this to ever get pushed to GitHub (in .gitignore), so generate
 file.close()
 #========================================
 
+#login_required wrapper
+#========================================
+def login_required(f):
+    '''Login function'''
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'username' in session:
+            return f(*args, **kwargs)
+        else:
+            session['prev_url'] = url_for(f"{f.__name__}")
+            return redirect(url_for('home'))
+    return wrap
+
 #If logged in: show clicker page, else login page
 @app.route('/')
 def home():
 	if 'username' in session:
 		print("Session username: " + session['username'])
+		if 'prev_url' in session:
+			return redirect(session['prev_url'])
 		return render_template("clicker.html", title = "Cookie Clicker")
 
 	return render_template("login.html", title = "Login")
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET','POST'])
 def login():
 	username = request.form.get('user')
 	password = request.form.get('pw')
@@ -62,7 +78,7 @@ def register():
 
 	db_ops.addAccount(username, password)
 	flash("You have successfully created your account. Please sign in now.")
-	return redirect(url_for('home'))
+	return redirect(session['prev_url'])
 
 @app.route('/logout')
 def logout():
@@ -75,22 +91,24 @@ def logout():
 	return redirect(url_for('home'))
 
 @app.route('/clicker')
+@login_required
 def clicker():
-	if 'username' not in session: #checks if user is logged in before allowing access to page
-		return redirect('/')
 	return render_template("clicker.html")
 
 @app.route('/shop')
+@login_required
 def shop():
 	return 0
 	#return render_template("shop.html")
 
 @app.route('/profile')
+@login_required
 def profile():
 	return 0
 	#return render_template("profile.html")
 
 @app.route('/leaderboards')
+@login_required
 def leaderboards():
 	return 0
 	#return render_template("leaderboards.html")
