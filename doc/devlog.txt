@@ -62,3 +62,6 @@ kevinL -- 2020-01-07 (17:00 onwards)
   - Home, login, logout, register routes
     - Templates for those
     - Will want to include a "confirm password" feature for registration
+
+shawJ -- 2020-01-08 00:01
+  - Added click animation
