@@ -69,3 +69,6 @@ shawJ -- 2020-01-08 00:01
 kelvinN -- 2020-01-08 08:15
   - checks if user is logged in before allowing access to page
   - added confirm password in signup
+
+kelvinN -- 2020-01-08 08:36
+  - created leaderboards, shop, and profile routes
