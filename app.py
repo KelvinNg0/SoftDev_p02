@@ -43,7 +43,7 @@ def login():
 	return redirect(url_for('home'))
 
 #Need this route since the anchor element on the login page for creating an account links to this
-@app.route("/signup")
+@app.route('/signup')
 def signup():
 	return render_template("register.html", title = "Register")
 
@@ -58,6 +58,16 @@ def register():
 
 	db_ops.addAccount(username, password)
 	flash("You have successfully created your account. Please sign in now.")
+	return redirect(url_for('home'))
+
+@app.route('/logout')
+def logout():
+	if 'username' in session: #checks that a user is logged in, in the first place
+		session.pop('username')
+		flash("You have been logged out.")
+		return redirect(url_for('home'))
+
+	flash("You are already logged out.")
 	return redirect(url_for('home'))
 
 if __name__ == "__main__":
