@@ -1,5 +1,6 @@
 console.log("clicker!");
 var cookie_img = document.getElementById("cookie-img");
+cookie_amnt = 0
 //(rect["x"] + rect["width"] / 2) + "," + (rect["y"] + rect["width"] / 2) + "," + (rect["width"] / 2));
 
 var scrollover = function(e){
@@ -29,6 +30,8 @@ var cookie_click = function(e){
       e.target.style.width= '99.95%';
       document.getElementById("filler").style.height= '29.8%';
     }, 150);
+    cookie_amnt++;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
   };
 };
 
