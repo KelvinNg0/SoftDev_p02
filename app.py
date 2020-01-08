@@ -29,6 +29,16 @@ def home():
 
 	return render_template("login.html", title = "Login")
 
+@app.route('/login', methods=['POST'])
+def login():
+	username = request.form.get('user')
+	password = request.form.get('pw')
+
+@app.route("/register")
+def register():
+	username = request.form.get('user')
+	password = request.form.get('pw')
+
 if __name__ == "__main__":
 	app.debug = True;
 	app.run();
