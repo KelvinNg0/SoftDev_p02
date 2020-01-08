@@ -29,6 +29,10 @@ def home():
 
 	return render_template("login.html")
 
+@app.route('/clicker')
+def clicker():
+	return render_template("clicker.html")
+
 if __name__ == "__main__":
 	app.debug = True;
 	app.run();
