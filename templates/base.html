@@ -7,6 +7,10 @@
     <title>{{ title }}</title>
 </head>
 <body>
+  {% set msgs = get_flashed_messages() %}
+  {% for each in msgs %}
+    <h4> {{ each }} </h4>
+  {% endfor %}
 
 {% block content %}
 
