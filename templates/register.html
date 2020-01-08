@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h3>Sign in to access this website</h3>
-  <form action="/login" method="post">
+  <h3>Create your account</h3>
+  <form action="/register" method="post">
     Username: <input type="text" name="user" required="required">
     <br><br>
     <!-- &nbsp; is a non-breaking space -->
@@ -12,5 +12,5 @@
     <br><br>
   </form>
 
-  <a href=/register>Don't have an account? Create one now.</a>
+  <a href="/">Go back</a>
 {% endblock %}

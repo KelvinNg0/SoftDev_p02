@@ -27,7 +27,7 @@ def home():
 		flash("You are logged in.")
 		return render_template("clicker.html")
 
-	return render_template("login.html")
+	return render_template("login.html", title = "Login")
 
 if __name__ == "__main__":
 	app.debug = True;
