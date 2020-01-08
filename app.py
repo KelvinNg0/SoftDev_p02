@@ -33,11 +33,13 @@ def home():
 def login():
 	username = request.form.get('user')
 	password = request.form.get('pw')
+	return "a"
 
 @app.route("/register")
 def register():
 	username = request.form.get('user')
 	password = request.form.get('pw')
+	return "a"
 
 if __name__ == "__main__":
 	app.debug = True;

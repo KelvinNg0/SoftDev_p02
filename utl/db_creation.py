@@ -1,7 +1,6 @@
 #========= ONLY RUN THIS FILE IF YOU WANT TO CREATE AN EMPTY DATABASE. ========#
 
 import sqlite3
-from datetime import datetime #for timestamps
 
 DB_FILE = "database.db"
 
@@ -19,8 +18,8 @@ def init_db():
             total_clicks INTEGER,
             perk_earned_ids TEXT,
             achievements_earned_ids TEXT,
-            trial_time_30_sec INTEGER,
-            trial_time_1_min INTEGER
+            trial_30_sec INTEGER,
+            trial_1_min INTEGER
         )
         """
     )
