@@ -72,6 +72,8 @@ def logout():
 
 @app.route('/clicker')
 def clicker():
+	if 'username' not in session: #checks if user is logged in before allowing access to page
+		return redirect('/')
 	return render_template("clicker.html")
 
 if __name__ == "__main__":
