@@ -51,6 +51,11 @@ def signup():
 def register():
 	username = request.form.get('user')
 	password = request.form.get('pw')
+	confirm_password = request.form.get('confirmpw')
+
+	if (password != confirm_password):
+		flash("The two passwords do not match.")
+		return redirect(url_for('signup'))
 
 	if (db_ops.accountExists(username)):
 		flash("This username is already in use. Try another one.")
