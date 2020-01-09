@@ -100,21 +100,18 @@ def clicker():
 @app.route('/shop')
 @login_required
 def shop():
-	return "0"
-	#return render_template("shop.html")
+   return render_template("shop.html")
 
 @app.route('/profile')
 @login_required
 def profile():
-	return 0
-	#return render_template("profile.html")
+	##flash(session["username"])
+	return render_template("profile.html",name=session["username"])
 
 @app.route('/leaderboards')
 @login_required
 def leaderboards():
-	return 0
-	#return render_template("leaderboards.html")
-
+	return render_template("leaderboards.html")
 @app.route('/regclicks')
 def reg_clicks():
 	db = sqlite3.connect("database.db")
