@@ -3,20 +3,30 @@ import json
 
 baseurl = "https://www.speedrun.com/api/v1/leaderboards/2689591p/category/rklr48kn?embed=players"
 
-class Run {
-    def __init__(self, place, time):
-        self.place = place
-        self.time = time
-}
-
+#Returns an array of dictionaries containing the necessary data per run
 def get_leaderboards():
     url = urllib.request.urlopen(baseurl)
     response = url.read()
-    runs_json_list = json.loads(response)['data']['runs']
-    #print(runs_json_list[0])
-    runs_list = []
+    data = json.loads(response)['data']
+    runs_json = data['runs']
+    players_json = data['players']['data']
 
-    for element in runs_json_list:
-        runs_list.append(Run(element['place'], element['run']['realtime_t']))
+    runs = [] # arr of dicts
 
-get_leaderboards()
+    for i in range(0, len(runs_json)):
+        dict = {}
+        dict['place'] = runs_json[i]['place'] #1st, 2nd, 3rd, etc.
+        dict['time'] = runs_json[i]['run']['times']['realtime_t'] #in seconds
+        dict['player'] = players_json[i]['names']['international']
+        runs.append(dict)
+
+    return runs
+
+"""
+runs = get_leaderboards()
+for run in runs:
+    print(run['place'])
+    print(run['time'])
+    print(run['player'])
+    print("\n")
+"""
