@@ -78,10 +78,10 @@ kevinL -- 2019-01-08 08:20
 kelvinN -- 2020-01-08 08:36
   - created leaderboards, shop, and profile routes
 
-shawS -- 2020-01-08 15:44
+justinS -- 2020-01-08 15:44
   - Added click animation
 
-shawS -- 2020-01-08 16:43
+justinS -- 2020-01-08 16:43
   - Added cookie display on clicker page that updates with click
 
 tanzimE -- 2020-01-08 09:02
@@ -91,3 +91,6 @@ tanzimE -- 2020-01-08 09:02
 kevinL -- 2020-01-08 21:30
   - Linked JavaScript clicking functionality Justin created with the Flask code
     - Utilize the "success" field of AJAX to do so via a callback function - prevents adding clicks over and over by setting the amnt_cookies variable to 0 on successful adding to the database.
+
+justinS -- 2020-01-08 21:53
+  - redirects to attempted url after login
