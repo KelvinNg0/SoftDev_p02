@@ -90,18 +90,19 @@ justinS -- 2020-01-08 16:43
 
 kevinL -- 2020-01-08 21:30
   - Linked JavaScript clicking functionality Justin created with the Flask code
-    - Utilize the "success" field of AJAX to do so via a callback function - prevents adding clicks over and over by setting the amnt_cookies variable to 0 on successful adding to the database.
+    - Utilize the "success" field of AJAX to do so via a callback function - prevents adding clicks
+      over and over by setting the amnt_cookies variable to 0 on successful adding to the database.
 
 justinS -- 2020-01-08 21:53
   - redirects to attempted url after login
 
 kelvinN -- 2020-01-08 00:12
   - update roles in readme
-  
+
 tanzimE -- 2020-01-09 06:39
   - created templates for the remaining routes
   - did bootstrap and css for them
- 
+
 kelvinN -- 2020-01-08 08:12
   - bug: amount of cookie randomly resets back to 1
   - TODO: fix bug, display amount of cookies saved in db, implement shop features
@@ -109,3 +110,6 @@ kelvinN -- 2020-01-08 08:12
 kevinL -- 2020-01-08 11:43
   - Retrieve the necessary data from the leaderboards API
     - Every run is stored as a dictionary; the function returns an array of dictionaries.
+
+kelvinN -- 2020-01-08 13:07
+  - updated roles and design doc (additional features after mvp and minor website design changes)

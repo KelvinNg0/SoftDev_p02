@@ -1,12 +1,13 @@
 # Cookie Clicker by Team POGGERS
 
 **Roster/Roles**
-- Kelvin Ng: Project Manager
-  - Update README/make sure design doc is current
+- Kelvin Ng:
+  - Project Manager
+  - Update README, make sure design doc is current, manage devlog
   - Minor coding tasks if necessary
 - Tanzim Elahi
   - Backend implementation of databases and interactions with frontend
-  - Implement Bootstrap framework
+  - Help with frontend (templates, routes, styling with Bootstrap)
 - Kevin Li
   - Interfacing with the API to retrieve the necessary data
   - Backend interactions with the frontend cookie clicker
