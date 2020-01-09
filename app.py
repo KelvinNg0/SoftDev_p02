@@ -41,7 +41,7 @@ def home():
 	if 'username' in session:
 		print("Session username: " + session['username'])
 		if 'prev_url' in session:
-			return redirect(session['prev_url'])
+			return redirect(session.pop("prev_url"))
 
 		return redirect(url_for('clicker'))
 
@@ -100,7 +100,7 @@ def clicker():
 @app.route('/shop')
 @login_required
 def shop():
-	return 0
+	return "0"
 	#return render_template("shop.html")
 
 @app.route('/profile')
