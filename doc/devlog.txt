@@ -105,3 +105,7 @@ tanzimE -- 2020-01-09 06:39
 kelvinN -- 2020-01-08 08:12
   - bug: amount of cookie randomly resets back to 1
   - TODO: fix bug, display amount of cookies saved in db, implement shop features
+
+kevinL -- 2020-01-08 11:43
+  - Retrieve the necessary data from the leaderboards API
+    - Every run is stored as a dictionary; the function returns an array of dictionaries.
