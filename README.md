@@ -5,11 +5,12 @@
   - Update README/make sure design doc is current
   - Minor coding tasks if necessary
 - Tanzim Elahi
-  - Backend (database and accounts)
-  - JavaScript necessary for clicking the cookie and purchasing perks
+  - Backend implementation of databases and interactions with frontend
+  - Implement Bootstrap framework
 - Kevin Li
   - Interfacing with the API to retrieve the necessary data
   - Backend interactions with the frontend cookie clicker
+  - Backend implementation of accounts
 - Justin Shaw
   - JavaScript necessary for clicking the cookie and purchasing perks
   - Frontend (templates, routes, styling with Bootstrap)
