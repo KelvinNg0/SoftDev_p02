@@ -1,6 +1,18 @@
-console.log("clicker!");
 var cookie_img = document.getElementById("cookie-img");
+to_log = 0;
 cookie_amnt = 0
+document.body.onload = function() {
+  console.log("clicker!");
+  var request = new XMLHttpRequest();
+  request.open("GET", "/api");
+  request.onload = function() {
+    var data = JSON.parse(this.response);
+    cookie_amnt = data.click;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
+  };
+  request.send();
+};
+
 //(rect["x"] + rect["width"] / 2) + "," + (rect["y"] + rect["width"] / 2) + "," + (rect["width"] / 2));
 
 var scrollover = function(e){
@@ -30,19 +42,20 @@ var cookie_click = function(e){
       e.target.style.width= '99.95%';
       document.getElementById("filler").style.height= '29.8%';
     }, 150);
+    to_log++;
     cookie_amnt++;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
   };
 };
 
 var pass_cookies_to_flask = function() {
-  if (cookie_amnt > 0) {
+  if (to_log > 0) {
     $.ajax({
       url: "/regclicks",
-      data: {clicks: cookie_amnt},
+      data: {clicks: to_log},
       success: function (data) {
         console.log("Data received, setting current cookies to 0.");
-        cookie_amnt = 0;
+        to_log = 0;
       }
     });
   }

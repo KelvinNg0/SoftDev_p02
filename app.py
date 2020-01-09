@@ -128,6 +128,21 @@ def reg_clicks():
 	db.close()
 	return "Nothing lol"
 
+@app.route("/api", methods=["GET"])
+def pass_info():
+	db = sqlite3.connect("database.db")
+	c = db.cursor()
+
+	username = session['username']
+	command = f"SELECT * FROM 'accounts' WHERE 'accounts'.username = {username}"
+	pull_info = c.execute(command).fetchall()[0]
+	info_dict = {"username": pull_info[0], "click": pull_info[2]}
+	db.commit()
+	db.close()
+	print(jsonify(info_dict))
+	return jsonify(info_dict)
+
+
 if __name__ == "__main__":
 	app.debug = True;
 	app.run();
