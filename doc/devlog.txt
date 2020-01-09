@@ -97,3 +97,7 @@ justinS -- 2020-01-08 21:53
 
 kelvinN -- 2020-01-08 00:12
   - update roles in readme
+ TanzimE -- 2020-01-09 6:39
+ created templates for the remaining routes
+ did bootstrap and css for them
+ 
