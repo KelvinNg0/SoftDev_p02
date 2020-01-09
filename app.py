@@ -2,6 +2,7 @@ from flask import *
 import os #for generating a secret key
 import urllib.request
 import json
+import sqlite3
 from functools import wraps
 from utl import db_ops
 
@@ -41,7 +42,8 @@ def home():
 		print("Session username: " + session['username'])
 		if 'prev_url' in session:
 			return redirect(session['prev_url'])
-		return render_template("clicker.html", title = "Cookie Clicker")
+
+		return redirect(url_for('clicker'))
 
 	return render_template("login.html", title = "Login")
 
@@ -78,7 +80,7 @@ def register():
 
 	db_ops.addAccount(username, password)
 	flash("You have successfully created your account. Please sign in now.")
-	return redirect(session['prev_url'])
+	return redirect(url_for('home'))
 
 @app.route('/logout')
 def logout():
@@ -90,10 +92,10 @@ def logout():
 	flash("You are already logged out.")
 	return redirect(url_for('home'))
 
-@app.route('/clicker')
+@app.route('/clicker', methods = ['GET', 'POST'])
 @login_required
 def clicker():
-	return render_template("clicker.html")
+	return render_template("clicker.html", title = "Cookie Clicker")
 
 @app.route('/shop')
 @login_required
@@ -112,6 +114,21 @@ def profile():
 def leaderboards():
 	return 0
 	#return render_template("leaderboards.html")
+
+@app.route('/regclicks')
+def reg_clicks():
+	db = sqlite3.connect("database.db")
+	c = db.cursor()
+
+	username = session['username']
+	num_clicks = request.args.get('clicks')
+	print(username)
+	print(num_clicks)
+	c.execute("UPDATE accounts SET clicks = clicks + (?) WHERE username = (?)", (num_clicks, username,))
+	c.execute("UPDATE accounts SET total_clicks = total_clicks + (?) WHERE username = (?)", (num_clicks, username,))
+
+	db.commit()
+	db.close()
 
 if __name__ == "__main__":
 	app.debug = True;

@@ -45,3 +45,13 @@ def authenticate(username, password):
         return False
 
     return password == row[1]
+
+def reg_clicks(username, num_clicks):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+
+    c.execute("UPDATE accounts SET clicks = clicks + num_clicks")
+    c.execute("UPDATE accounts SET total_clicks = total_clicks + num_clicks")
+
+    db.commit()
+    db.close()

@@ -35,6 +35,19 @@ var cookie_click = function(e){
   };
 };
 
+var pass_cookies_to_flask = function() {
+  if (cookie_amnt > 0) {
+    $.ajax({
+      url: "/regclicks",
+      data: {clicks: cookie_amnt},
+      success: function (data) {
+        console.log("Data received."); //successful response
+      }
+    });
+  }
+}
+
 cookie_img.addEventListener('click' , cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
+setInterval(pass_cookies_to_flask, 5000);
