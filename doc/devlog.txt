@@ -39,25 +39,25 @@ kevinL -- 2020-01-06 18:00
     - Expand on PM's role
     - Extra notes in the database section
   - requirements.txt
- 
+
 kelvinN -- 2020-01-07 08:13
   - Updated README to be in line with design doc specifications
   - TODO for today: html templates + login, registration, sessions, and init dbs
- 
+
 kevinL -- 2020-01-07 08:30
   - Created functions that initialized the database
   - Now working on individual perks/achievements
 
-shawJ -- 2020-01-07 08:34
+shawS -- 2020-01-07 08:34
   - Started HTML template
 
-shawJ -- 2020-01-07 16:53
+shawS -- 2020-01-07 16:53
   - Began organizing the page and working in Bootstraps
 
-shawJ -- 2020-01-07 18:35
+shawS -- 2020-01-07 18:35
   - Custom CSS work
 
-shawJ -- 2020-01-07 21:59
+shawS -- 2020-01-07 21:59
   - Dynamic javascript for cookie hover animation
 
 kevinL -- 2020-01-07 (17:00 onwards)
@@ -66,7 +66,7 @@ kevinL -- 2020-01-07 (17:00 onwards)
     - Templates for those
     - Will want to include a "confirm password" feature for registration
 
-shawJ -- 2020-01-08 00:01
+shawS -- 2020-01-08 00:01
   - Added click animation
 
 kelvinN -- 2020-01-08 08:15
@@ -77,7 +77,13 @@ kevinL -- 2019-01-08 08:20
 
 kelvinN -- 2020-01-08 08:36
   - created leaderboards, shop, and profile routes
-  
+
+shawS -- 2020-01-08 15:44
+  - Added click animation
+
+shawS -- 2020-01-08 16:43
+  - Added cookie display on clicker page that updates with click
+
 tanzimE -- 2020-01-08 09:02
   - Created database functions
   - Caught up with all the stuff that I missed due to illness
