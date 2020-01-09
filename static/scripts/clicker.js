@@ -41,7 +41,8 @@ var pass_cookies_to_flask = function() {
       url: "/regclicks",
       data: {clicks: cookie_amnt},
       success: function (data) {
-        console.log("Data received."); //successful response
+        console.log("Data received, setting current cookies to 0.");
+        cookie_amnt = 0;
       }
     });
   }

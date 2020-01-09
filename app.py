@@ -129,6 +129,7 @@ def reg_clicks():
 
 	db.commit()
 	db.close()
+	return "Nothing lol"
 
 if __name__ == "__main__":
 	app.debug = True;
