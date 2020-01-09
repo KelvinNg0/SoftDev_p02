@@ -94,3 +94,6 @@ kevinL -- 2020-01-08 21:30
 
 justinS -- 2020-01-08 21:53
   - redirects to attempted url after login
+
+kelvinN -- 2020-01-08 00:12
+  - update roles in readme
