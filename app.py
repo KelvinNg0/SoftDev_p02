@@ -1,10 +1,10 @@
 from flask import *
 import os #for generating a secret key
-import urllib.request
-import json
 import sqlite3
 from functools import wraps
+
 from utl import db_ops
+from utl import api
 
 app = Flask(__name__)
 
@@ -112,6 +112,7 @@ def profile():
 @login_required
 def leaderboards():
 	return render_template("leaderboards.html")
+
 @app.route('/regclicks')
 def reg_clicks():
 	db = sqlite3.connect("database.db")
