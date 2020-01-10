@@ -97,11 +97,6 @@ def logout():
 def clicker():
 	return render_template("clicker.html", title = "Cookie Clicker")
 
-@app.route('/shop')
-@login_required
-def shop():
-   return render_template("shop.html")
-
 @app.route('/profile')
 @login_required
 def profile():
