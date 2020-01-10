@@ -135,8 +135,9 @@ def pass_info():
 	c = db.cursor()
 
 	username = session['username']
-	command = f"SELECT * FROM 'accounts' WHERE 'accounts'.username = {username}"
-	pull_info = c.execute(command).fetchall()[0]
+	#command = f"SELECT * FROM accounts WHERE username = {username}"
+	#pull_info = c.execute(command).fetchall()[0]
+	pull_info = c.execute("SELECT * FROM accounts WHERE username = (?)", (username,)).fetchall()[0]
 	info_dict = {"username": pull_info[0], "click": pull_info[2]}
 	db.commit()
 	db.close()
