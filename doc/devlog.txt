@@ -103,13 +103,17 @@ tanzimE -- 2020-01-09 06:39
   - created templates for the remaining routes
   - did bootstrap and css for them
 
-kelvinN -- 2020-01-08 08:12
+kelvinN -- 2020-01-09 08:12
   - bug: amount of cookie randomly resets back to 1
   - TODO: fix bug, display amount of cookies saved in db, implement shop features
 
-kevinL -- 2020-01-08 11:43
+kevinL -- 2020-01-09 11:43
   - Retrieve the necessary data from the leaderboards API
     - Every run is stored as a dictionary; the function returns an array of dictionaries.
 
-kelvinN -- 2020-01-08 13:07
+kelvinN -- 2020-01-09 13:07
   - updated roles and design doc (additional features after mvp and minor website design changes)
+
+kelvinN -- 2020-01-10 08:13
+  - design change: move shop to clicker page instead of creating a seperate page
+  - TODO over weekend: implement shop, leaderboards, and complete api work
