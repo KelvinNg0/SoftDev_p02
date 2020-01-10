@@ -17,6 +17,21 @@
     </p>
   </main>
 
+<table>
+  <tr>
+    <th>Placing</th>
+    <th>Player</th>
+    <th>Time</th>
+  </tr>
+  {% for run in runs %}
+  <tr>
+    <td>{{run['place']}}</td>
+    <td>{{run['player']}}</td>
+    <td>{{run['time']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
 </div>
 
 {% endblock content %}
