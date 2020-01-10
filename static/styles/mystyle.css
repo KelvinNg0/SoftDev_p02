@@ -70,3 +70,8 @@ body {
 .col-sm-4{
   padding: 0;
 }
+
+.building-icon{
+  max-width: 10vh;
+  max-height: auto;
+}

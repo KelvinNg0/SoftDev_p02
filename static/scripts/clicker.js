@@ -6,6 +6,7 @@ document.body.onload = function() {
   var request = new XMLHttpRequest();
   request.open("GET", "/api");
   request.onload = function() {
+    console.log(this.response);
     var data = JSON.parse(this.response);
     cookie_amnt = data.click;
     console.log(data.click);
