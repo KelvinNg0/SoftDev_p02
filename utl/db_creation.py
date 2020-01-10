@@ -2,8 +2,7 @@
 
 import sqlite3
 
-DB_FILE = "database.db"
-
+DB_FILE = "../database.db"
 def init_db():
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
