@@ -111,7 +111,7 @@ def profile():
 @app.route('/leaderboards')
 @login_required
 def leaderboards():
-	return render_template("leaderboards.html")
+	return render_template("leaderboards.html", runs = api.get_leaderboards())
 
 @app.route('/regclicks')
 def reg_clicks():
