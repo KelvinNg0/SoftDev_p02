@@ -29,7 +29,7 @@ def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'username' in session:
-            return f(*args, **kwargs)
+zx            return f(*args, **kwargs)
         else:
             session['prev_url'] = url_for(f"{f.__name__}")
             return redirect(url_for('home'))
@@ -111,7 +111,7 @@ def profile():
 @app.route('/leaderboards')
 @login_required
 def leaderboards():
-	return render_template("leaderboards.html", runs = api.get_leaderboards())
+	return render_template("leaderboards.html")
 
 @app.route('/regclicks')
 def reg_clicks():
