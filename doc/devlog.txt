@@ -117,3 +117,6 @@ kelvinN -- 2020-01-09 13:07
 kelvinN -- 2020-01-10 08:13
   - design change: move shop to clicker page instead of creating a seperate page
   - TODO over weekend: implement shop, leaderboards, and complete api work
+
+kelvinN -- 2020-01-10 10:02
+  - updated site map (removed "shop" route, added "clicker" route, edited default route)
