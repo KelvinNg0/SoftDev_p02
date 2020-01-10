@@ -8,10 +8,12 @@ document.body.onload = function() {
   request.onload = function() {
     var data = JSON.parse(this.response);
     cookie_amnt = data.click;
+    console.log(data.click);
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
   };
   request.send();
 };
+document.getElementById("cookie-num").innerHTML = cookie_amnt;
 
 //(rect["x"] + rect["width"] / 2) + "," + (rect["y"] + rect["width"] / 2) + "," + (rect["width"] / 2));
 
