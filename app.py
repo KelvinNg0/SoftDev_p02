@@ -79,7 +79,8 @@ def register():
 		return redirect(url_for('signup'))
 
 	db_ops.addAccount(username, password)
-	flash("You have successfully created your account. Please sign in now.")
+	flash("You have successfully created your account.")
+	session['username'] = username
 	return redirect(url_for('home'))
 
 @app.route('/logout')
