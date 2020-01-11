@@ -123,3 +123,9 @@ kelvinN -- 2020-01-10 10:02
 
 kevinL -- 2020-01-10 11:40
   - Fixed whatever issue Justin was having with linking the sqlite and JS together
+
+kevinL -- 2020-01-11
+  - Un-ugly navbar
+  - Insert profile data from database into profile page
+  - Making the shop look better (had to make the border not white because sometimes the boxes would stay highlighted after clicking off)
+  - Clicking shop items will save perk IDs to the database for the user now
