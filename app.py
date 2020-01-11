@@ -100,8 +100,9 @@ def clicker():
 @app.route('/profile')
 @login_required
 def profile():
-	##flash(session["username"])
-	return render_template("profile.html",name=session["username"])
+	username = session['username']
+	cookies = db_ops.get_clicks(username) # a tuple, index 0 is cookies, index 1 is total_cookies
+	return render_template("profile.html", name = username, cookies = cookies[0], total_cookies = cookies[1])
 
 @app.route('/leaderboards')
 @login_required

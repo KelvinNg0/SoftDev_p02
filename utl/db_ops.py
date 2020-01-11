@@ -55,3 +55,14 @@ def reg_clicks(username, num_clicks):
 
     db.commit()
     db.close()
+
+def get_clicks(username):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+
+    c.execute("SELECT clicks FROM accounts WHERE username = (?)", (username,))
+    cookies = c.fetchall()[0][0]
+    c.execute("SELECT total_clicks FROM accounts WHERE username = (?)", (username,))
+    total_cookies = c.fetchall()[0][0]
+
+    return cookies, total_cookies
