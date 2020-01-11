@@ -67,4 +67,4 @@ var pass_cookies_to_flask = function() {
 cookie_img.addEventListener('click' , cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
-setInterval(pass_cookies_to_flask, 5000);
+setInterval(pass_cookies_to_flask, 1000);

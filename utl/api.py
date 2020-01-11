@@ -21,12 +21,3 @@ def get_leaderboards():
         runs.append(dict)
 
     return runs
-
-"""
-runs = get_leaderboards()
-for run in runs:
-    print(run['place'])
-    print(run['time'])
-    print(run['player'])
-    print("\n")
-"""

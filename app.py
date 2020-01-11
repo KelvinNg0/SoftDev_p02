@@ -39,15 +39,15 @@ def login_required(f):
 @app.route('/')
 def home():
 	if 'username' in session:
-		print("Session username: " + session['username'])
+		#print("Session username: " + session['username'])
 		if 'prev_url' in session:
 			return redirect(session.pop("prev_url"))
 
 		return redirect(url_for('clicker'))
 
-	return render_template("login.html", title = "Login")
+	return render_template("login.html")
 
-@app.route('/login', methods=['GET','POST'])
+@app.route('/login', methods=['POST'])
 def login():
 	username = request.form.get('user')
 	password = request.form.get('pw')
@@ -62,7 +62,7 @@ def login():
 #Need this route since the anchor element on the login page for creating an account links to this
 @app.route('/signup')
 def signup():
-	return render_template("register.html", title = "Register")
+	return render_template("register.html")
 
 @app.route("/register", methods=['POST'])
 def register():
@@ -111,35 +111,24 @@ def leaderboards():
 
 @app.route('/regclicks')
 def reg_clicks():
-	db = sqlite3.connect("database.db")
-	c = db.cursor()
-
 	username = session['username']
 	num_clicks = request.args.get('clicks')
-	print(username)
-	print(num_clicks)
-	c.execute("UPDATE accounts SET clicks = clicks + (?) WHERE username = (?)", (num_clicks, username,))
-	c.execute("UPDATE accounts SET total_clicks = total_clicks + (?) WHERE username = (?)", (num_clicks, username,))
+	db_ops.reg_clicks(username, num_clicks)
+	return "I just need something here to get rid of that internal server error in the console."
 
-	db.commit()
-	db.close()
-	return "Nothing lol"
-
-@app.route("/api", methods=["GET"])
+@app.route("/api")
 def pass_info():
 	db = sqlite3.connect("database.db")
 	c = db.cursor()
 
 	username = session['username']
-	#command = f"SELECT * FROM accounts WHERE username = {username}"
-	#pull_info = c.execute(command).fetchall()[0]
 	pull_info = c.execute("SELECT * FROM accounts WHERE username = (?)", (username,)).fetchall()[0]
 	info_dict = {"username": pull_info[0], "click": pull_info[2]}
+
 	db.commit()
 	db.close()
-	print(jsonify(info_dict))
+	#print(jsonify(info_dict))
 	return jsonify(info_dict)
-
 
 if __name__ == "__main__":
 	app.debug = True;

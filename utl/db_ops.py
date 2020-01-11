@@ -50,8 +50,8 @@ def reg_clicks(username, num_clicks):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
-    c.execute("UPDATE accounts SET clicks = clicks + num_clicks")
-    c.execute("UPDATE accounts SET total_clicks = total_clicks + num_clicks")
+    c.execute("UPDATE accounts SET clicks = clicks + (?) WHERE username = (?)", (num_clicks, username,))
+    c.execute("UPDATE accounts SET total_clicks = total_clicks + (?) WHERE username = (?)", (num_clicks, username,))
 
     db.commit()
     db.close()
