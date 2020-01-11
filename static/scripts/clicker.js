@@ -64,12 +64,39 @@ var pass_cookies_to_flask = function() {
   }
 }
 
-var check_if_can_buy = function() {
-  var perks = document.getElementsByClassName("shop");
-  
+var shop = function(id) {
+  $.ajax({
+    url: "/shop",
+    data: {id: id},
+    success: function (data) {
+      console.log("Perk purchased successfully.");
+    }
+  });
 }
 
-cookie_img.addEventListener('click' , cookie_click);
+cookie_img.addEventListener('click', cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
+
+var perk0 = document.getElementById("perk0");
+var perk1 = document.getElementById("perk1");
+var perk2 = document.getElementById("perk2");
+var perk3 = document.getElementById("perk3");
+var perk4 = document.getElementById("perk4");
+perk0.addEventListener('click', function() {
+  shop(0);
+})
+perk1.addEventListener('click', function() {
+  shop(1);
+})
+perk2.addEventListener('click', function() {
+  shop(2);
+})
+perk3.addEventListener('click', function() {
+  shop(3);
+})
+perk4.addEventListener('click', function() {
+  shop(4);
+})
+
 setInterval(pass_cookies_to_flask, 2000);
