@@ -1,27 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="col1">
-          <div class="cookie-display"> <p class="cookie-num" id="cookie-num"></p></div>
-          <div style="height:30%;" id="filler"></div>
-            <div class="cookie" id="clickbox">
-              <img src="static/cookie.png" class="cookie-img" id="cookie-img">
-            </div>
-          </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="col1">
+        <div class="cookie-display"> <p class="cookie-num" id="cookie-num"></p></div>
+        <div style="height:30%;" id="filler"></div>
+        <div class="cookie" id="clickbox">
+          <img src="static/cookie.png" class="cookie-img" id="cookie-img">
         </div>
-      <div class="col-sm-5">
-
       </div>
-      <div class="col-sm-3">
-        <main role="main" class="px-3">
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">
-              <img src="static/cursor.png" class= ".img-fluid building-icon">Cursor- 15 cookies</a>
-          </p>
     </div>
-  <script src="../static/scripts/clicker.js"></script>
+
+    <div class="col"></div>
+
+      <div class="col-sm-4">
+        <br>
+
+        <a href="#" class="btn btn-lg btn-secondary font-weight-bold bg-white">
+          <img width="75px" src="static/cursor.png" class= ".img-fluid building-icon">
+          Cursor [20 cookies]
+        </a><br><br>
+
+        <a href="#" class="btn btn-lg btn-secondary font-weight-bold bg-white">
+          <img width="75px" src="static/cursor.png" class= ".img-fluid building-icon">
+          Cursor 2 [100 cookies]
+        </a><br><br>
+
+        <a href="#" class="btn btn-lg btn-secondary font-weight-bold bg-white">
+          <img width="75px" src="static/cursor.png" class= ".img-fluid building-icon">
+          Cursor 3 [250 cookies]
+        </a><br><br>
+
+        <a href="#" class="btn btn-lg btn-secondary font-weight-bold bg-white">
+          <img width="75px" src="static/cursor.png" class= ".img-fluid building-icon">
+          Cursor 4 [500 cookies]
+        </a><br><br>
+
+        <a href="#" class="btn btn-lg btn-secondary font-weight-bold bg-white">
+          <img width="75px" src="static/cursor.png" class= ".img-fluid building-icon">
+          Cursor 5 [1000 cookies]
+        </a><br><br>
+      </div>
+    </div>
   </div>
+  <script src="../static/scripts/clicker.js"></script>
+</div>
 {% endblock %}

@@ -64,7 +64,12 @@ var pass_cookies_to_flask = function() {
   }
 }
 
+var check_if_can_buy = function() {
+  var perks = document.getElementsByClassName("shop");
+  
+}
+
 cookie_img.addEventListener('click' , cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
-setInterval(pass_cookies_to_flask, 1000);
+setInterval(pass_cookies_to_flask, 2000);

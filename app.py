@@ -109,12 +109,18 @@ def profile():
 def leaderboards():
 	return render_template("leaderboards.html", runs = api.get_leaderboards())
 
+# JS related routes ============================================================
 @app.route('/regclicks')
 def reg_clicks():
 	username = session['username']
 	num_clicks = request.args.get('clicks')
 	db_ops.reg_clicks(username, num_clicks)
 	return "I just need something here to get rid of that internal server error in the console."
+
+@app.route('/shop')
+def shop():
+	username = session['username']
+	return "Same here."
 
 @app.route("/api")
 def pass_info():
