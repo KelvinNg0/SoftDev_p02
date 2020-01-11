@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="static/styles/cover.css">
-    <link rel="stylesheet" type="text/css" href="static/styles/mystyle.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
+  <title>{{ title }}</title>
+  <meta charset="UTF-8">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/styles/cover.css">
+  <link rel="stylesheet" type="text/css" href="static/styles/mystyle.css">
 </head>
 <body>
   {% set msgs = get_flashed_messages() %}
@@ -14,8 +16,20 @@
     <h4> {{ each }} </h4>
   {% endfor %}
 
-{% block content %}
+  <nav class="navbar navbar-expand-sm bg-light">
+    <a class="navbar-brand" href="../">Cookie Clicker</a>
+    <ul class="navbar-nav">
+      <li><a class="nav-link" href="../leaderboards">View leaderboards</a></li>
+    </ul>
 
-{% endblock content %}
+    <ul class="navbar-nav ml-auto">
+      <li><a class="nav-link" href="../profile">Profile</a></li>
+      <li><a class="nav-link" href="../logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  {% block content %}
+
+  {% endblock content %}
 </body>
 </html>
