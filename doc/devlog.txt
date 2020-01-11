@@ -120,3 +120,6 @@ kelvinN -- 2020-01-10 08:13
 
 kelvinN -- 2020-01-10 10:02
   - updated site map (removed "shop" route, added "clicker" route, edited default route)
+
+kevinL -- 2020-01-10 11:40
+  - Fixed whatever issue Justin was having with linking the sqlite and JS together
