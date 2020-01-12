@@ -88,8 +88,13 @@ cursor_button.addEventListener('click', function(e) {
   persecond += 0.12; //weird float precision stuff
   persecond = Math.floor(persecond * 10) / 10;
   persecond_tracker.innerHTML = persecond;
+  clearInterval(clicks_interval);
+  clicks_interval = setInterval(function() {
+    to_log++;
+    cookie_amnt++;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
+  }, 1000 / persecond);
 })
-
 
 var perk_0_lvl = 0
 var perk_1_lvl = 0
@@ -166,4 +171,13 @@ setInterval(  function(){
   },
 300);
 
-//setInterval(pass_cookies_to_flask, 2000);
+var clicks_interval = setInterval(function() {
+  console.log("Just need a blank interval");
+}, 1000000000000)
+
+clearInterval(clicks_interval);
+clicks_interval = setInterval(function() {
+  to_log++;
+  cookie_amnt++;
+  document.getElementById("cookie-num").innerHTML = cookie_amnt;
+}, 1000 / persecond);
