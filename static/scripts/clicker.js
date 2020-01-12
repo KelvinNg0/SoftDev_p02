@@ -1,6 +1,9 @@
 var cookie_img = document.getElementById("cookie-img");
 to_log = 0;
 cookie_amnt = 0
+var persecond_tracker = document.getElementById("persecond");
+var persecond = parseFloat(persecond_tracker.innerHTML);
+
 document.body.onload = function() {
   console.log("clicker!");
   var request = new XMLHttpRequest();
@@ -82,11 +85,15 @@ var building_buttons = []
 var cursor_button = document.getElementById("cursor_button");
 cursor_button.addEventListener('click', function(e) {
   shop(0);
+  persecond += 0.12; //weird float precision stuff
+  persecond = Math.floor(persecond * 10) / 10;
+  persecond_tracker.innerHTML = persecond;
 })
 
 
 var perk_0_lvl = 0
 var perk_1_lvl = 0
+
 setInterval(  function(){
     var cursor_id = 0
     var request = new XMLHttpRequest();
@@ -97,6 +104,8 @@ setInterval(  function(){
       perk_1_lvl = data.perk_1_lvl;
     };
     request.send();
+
+    /*
     //console.log(perks);
     if (perks.includes("0")){
       var new_cursor_button = cursor_button.cloneNode(true);
@@ -138,6 +147,9 @@ setInterval(  function(){
       cursor_button = new_cursor_button;
       cursor_id = 4
     };
+
+*/
+
     pass_cookies_to_flask();
     var request = new XMLHttpRequest();
     request.open("GET", "/api/perks/" + cursor_id);
@@ -153,7 +165,5 @@ setInterval(  function(){
     request.send();
   },
 300);
-
-
 
 //setInterval(pass_cookies_to_flask, 2000);
