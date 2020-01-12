@@ -3,8 +3,11 @@ html, body {
 }
 
 body {
-  padding: 0px;
   height: 100vh;
+}
+
+h1, h2, h3, h4, h5, th, td {
+  padding-left: 10px;
 }
 
 .container-fluid{
