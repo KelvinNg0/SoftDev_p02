@@ -146,3 +146,9 @@ kevinL -- 2020-01-12 11:00
     - Trial data saves to database; recording that on the profile page as well.
     - A smaller amount of clicks than what you previously had will not overwrite what you had.
     - You are not allowed to "cheat" on the trials.
+
+kevinL -- 2020-01-12 15:25
+  - Switch to Justin's idea of using "tiers" of perks
+  - Compare trial times with others on this site via the leaderboards page
+  - Calculate the amount of autoclicks per seconds
+  - Use said calculation to automatically increase your cookies
