@@ -114,9 +114,9 @@ setInterval(  function(){
       perks = data.perk_earned_ids;
     };
     request.send();
-    console.log(perks);
+    //console.log(perks);
     if (perks.includes("0")){
-      console.log("u got a zero");
+      //console.log("u got a zero");
       perk0.remove();
     };
     if (perks.includes("1")){
@@ -131,9 +131,10 @@ setInterval(  function(){
     if (perks.includes("4")){
       perk4.remove();
     };
+    pass_cookies_to_flask();
   },
 300);
 
 
 
-setInterval(pass_cookies_to_flask, 2000);
+//setInterval(pass_cookies_to_flask, 2000);
