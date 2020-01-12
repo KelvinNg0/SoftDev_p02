@@ -78,25 +78,62 @@ cookie_img.addEventListener('click', cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
 
+var building_buttons = []
 var perk0 = document.getElementById("perk0");
+  building_buttons.push(perk0);
 var perk1 = document.getElementById("perk1");
+  building_buttons.push(perk1);
 var perk2 = document.getElementById("perk2");
+  building_buttons.push(perk2);
 var perk3 = document.getElementById("perk3");
+  building_buttons.push(perk3);
 var perk4 = document.getElementById("perk4");
-perk0.addEventListener('click', function() {
+  building_buttons.push(perk4);
+perk0.addEventListener('click', function(e) {
   shop(0);
 })
-perk1.addEventListener('click', function() {
+perk1.addEventListener('click', function(e) {
   shop(1);
 })
-perk2.addEventListener('click', function() {
+perk2.addEventListener('click', function(e) {
   shop(2);
 })
-perk3.addEventListener('click', function() {
+perk3.addEventListener('click', function(e) {
   shop(3);
 })
-perk4.addEventListener('click', function() {
+perk4.addEventListener('click', function(e) {
   shop(4);
 })
+
+var perks = []
+setInterval(  function(){
+    var request = new XMLHttpRequest();
+    request.open("GET", "/api");
+    request.onload = function() {
+      var data = JSON.parse(this.response);
+      perks = data.perk_earned_ids;
+    };
+    request.send();
+    console.log(perks);
+    if (perks.includes("0")){
+      console.log("u got a zero");
+      perk0.remove();
+    };
+    if (perks.includes("1")){
+      perk1.remove();
+    };
+    if (perks.includes("2")){
+      perk2.remove();
+    };
+    if (perks.includes("3")){
+      perk3.remove();
+    };
+    if (perks.includes("4")){
+      perk4.remove();
+    };
+  },
+300);
+
+
 
 setInterval(pass_cookies_to_flask, 2000);

@@ -133,7 +133,7 @@ def pass_info():
 
 	username = session['username']
 	pull_info = c.execute("SELECT * FROM accounts WHERE username = (?)", (username,)).fetchall()[0]
-	info_dict = {"username": pull_info[0], "click": pull_info[2]}
+	info_dict = {"username": pull_info[0], "click": pull_info[2], "perk_earned_ids": pull_info[4].split(",")}
 
 	db.commit()
 	db.close()
