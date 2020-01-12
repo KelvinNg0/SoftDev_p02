@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3>Compare to the accomplishments of others on this site!</h3>
-<h4>How others players performed in the 15 second time trials:</h4>
-<table>
-  <tr>
+<br>
+<h4>15 second time trials</h4>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark"><tr>
     <th>Username</th>
     <th>Amount of clicks</th>
-  </tr>
+  </tr></thead>
   {% for run in leaderboard_15_sec %}
   <tr>
     <td>{{run['username']}}</td>
@@ -18,12 +18,12 @@
 
 <br><br><br>
 
-<h4>How others players performed in the 30 second time trials:</h4>
-<table>
-  <tr>
+<h4>30 second time trials</h4>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark"><tr>
     <th>Username</th>
     <th>Amount of clicks</th>
-  </tr>
+  </tr></thead>
   {% for run in leaderboard_30_sec %}
   <tr>
     <td>{{run['username']}}</td>
@@ -34,14 +34,13 @@
 
 <br><br><br>
 
-<h3>Compare to the accomplishments of others on speedrun.com!</h3>
-<h4>How long these players took to click the cookie a million times: </h4>
-<table>
-  <tr>
+<h4>How long players on speedrun.com took to click the cookie a million times</h4>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark"><tr>
     <th>Placing</th>
     <th>Player</th>
     <th>Time (seconds)</th>
-  </tr>
+  </tr></thead>
   {% for run in runs %}
   <tr>
     <td>{{run['place']}}</td>

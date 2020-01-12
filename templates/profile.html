@@ -3,9 +3,12 @@
 {% block content %}
 
   <h1>Welcome, {{ name }}! </h1>
-  <h5>Cookies: {{ cookies }}</h5>
-  <h5>Total amount of cookies you've ever clicked: {{ total_cookies }}</h5>
-  <h5>Highest amount of clicks achieved in 15 seconds: {{ trial_15_sec }}</h5>
-  <h5>Highest amount of clicks achieved in 30 seconds: {{ trial_30_sec }}</h5>
+
+  <ul class="list-group">
+    <li class="list-group-item"><h5>Cookies: {{ cookies }}</h5></li>
+    <li class="list-group-item"><h5>Total amount of cookies you've ever clicked: {{ total_cookies }}</h5></li>
+    <li class="list-group-item"><h5>Highest amount of clicks achieved in 15 seconds: {{ trial_15_sec }}</h5></li>
+    <li class="list-group-item"><h5>Highest amount of clicks achieved in 30 seconds: {{ trial_30_sec }}</h5></li>
+  </ul>
 
 {% endblock content %}
