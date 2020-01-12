@@ -152,3 +152,12 @@ kevinL -- 2020-01-12 15:25
   - Compare trial times with others on this site via the leaderboards page
   - Calculate the amount of autoclicks per seconds
   - Use said calculation to automatically increase your cookies
+
+kevinL -- 2020-01-12 18:30
+  - Bootstrap styling for those pages:
+    - Login
+    - Registration
+    - Time trials
+    - leaderboards
+    - Profile page
+  - Also created a help page
