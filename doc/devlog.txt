@@ -66,7 +66,7 @@ kevinL -- 2020-01-07 (17:00 onwards)
     - Templates for those
     - Will want to include a "confirm password" feature for registration
 
-shawS -- 2020-01-08 00:01
+justinS -- 2020-01-08 00:01
   - Added click animation
 
 kelvinN -- 2020-01-08 08:15
@@ -81,9 +81,6 @@ kelvinN -- 2020-01-08 08:36
 tanzimE -- 2020-01-08 09:02
   - Created database functions
   - Caught up with all the stuff that I missed due to illness
-
-justinS -- 2020-01-08 15:44
-  - Added click animation
 
 justinS -- 2020-01-08 16:43
   - Added cookie display on clicker page that updates with click
@@ -107,6 +104,9 @@ kelvinN -- 2020-01-09 08:12
   - bug: amount of cookie randomly resets back to 1
   - TODO: fix bug, display amount of cookies saved in db, implement shop features
 
+justinS -- 2020-01-9 08:40
+  - gave flask app REST API functionality and made clicks display info from database
+
 kevinL -- 2020-01-09 11:43
   - Retrieve the necessary data from the leaderboards API
     - Every run is stored as a dictionary; the function returns an array of dictionaries.
@@ -117,6 +117,9 @@ kelvinN -- 2020-01-09 13:07
 kelvinN -- 2020-01-10 08:13
   - design change: move shop to clicker page instead of creating a seperate page
   - TODO over weekend: implement shop, leaderboards, and complete api work
+
+justinS -- 2020-01-10 08:34
+  - (attempted) bug fixes :(
 
 kelvinN -- 2020-01-10 10:02
   - updated site map (removed "shop" route, added "clicker" route, edited default route)
@@ -129,3 +132,6 @@ kevinL -- 2020-01-11
   - Insert profile data from database into profile page
   - Making the shop look better (had to make the border not white because sometimes the boxes would stay highlighted after clicking off)
   - Clicking shop items will save perk IDs to the database for the user now
+
+justinS -- 2020-01-11 19:42
+  - removes perks when they are purchased
