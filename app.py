@@ -110,6 +110,16 @@ def profile():
 def leaderboards():
 	return render_template("leaderboards.html", runs = api.get_leaderboards())
 
+@app.route('/trial/thirtysec')
+@login_required
+def thirty_sec_trial():
+	return render_template("trial.html", seconds = 30)
+
+@app.route('/trial/onemin')
+@login_required
+def one_min_trial():
+	return render_template("trial.html", seconds = 60)
+
 # JS related routes ============================================================
 @app.route('/regclicks')
 def reg_clicks():
@@ -152,6 +162,7 @@ def pass_task_info(perk_id):
 	db.close()
 	print(jsonify(info_dict))
 	return jsonify(info_dict)
+
 
 if __name__ == "__main__":
 	app.debug = True;
