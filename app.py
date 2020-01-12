@@ -96,7 +96,10 @@ def logout():
 @app.route('/clicker', methods = ['GET', 'POST'])
 @login_required
 def clicker():
-	return render_template("clicker.html", title = "Cookie Clicker")
+	username = session['username']
+	persecond = db_ops.calc_persecond(username)
+
+	return render_template("clicker.html", title = "Cookie Clicker", persecond = persecond)
 
 @app.route('/profile')
 @login_required
@@ -153,7 +156,7 @@ def pass_info():
 
 	username = session['username']
 	pull_info = c.execute("SELECT * FROM accounts WHERE username = (?)", (username,)).fetchall()[0]
-	info_dict = {"username": pull_info[0], "click": pull_info[2], "perk_earned_ids": pull_info[4].split(",")}
+	info_dict = {"username": pull_info[0], "click": pull_info[2], "perk_0_lvl": pull_info[4], "perk_1_lvl": pull_info[5]}
 
 	db.commit()
 	db.close()

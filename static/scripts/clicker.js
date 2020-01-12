@@ -85,14 +85,16 @@ cursor_button.addEventListener('click', function(e) {
 })
 
 
-var perks = []
+var perk_0_lvl = 0
+var perk_1_lvl = 0
 setInterval(  function(){
     var cursor_id = 0
     var request = new XMLHttpRequest();
     request.open("GET", "/api");
     request.onload = function() {
       var data = JSON.parse(this.response);
-      perks = data.perk_earned_ids;
+      perk_0_lvl = data.perk_0_lvl;
+      perk_1_lvl = data.perk_1_lvl;
     };
     request.send();
     //console.log(perks);
