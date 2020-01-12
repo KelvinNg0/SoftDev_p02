@@ -4,11 +4,34 @@
 
   <h1>Welcome, {{ name }}! </h1>
 
-  <ul class="list-group">
-    <li class="list-group-item"><h5>Cookies: {{ cookies }}</h5></li>
-    <li class="list-group-item"><h5>Total amount of cookies you've ever clicked: {{ total_cookies }}</h5></li>
-    <li class="list-group-item"><h5>Highest amount of clicks achieved in 15 seconds: {{ trial_15_sec }}</h5></li>
-    <li class="list-group-item"><h5>Highest amount of clicks achieved in 30 seconds: {{ trial_30_sec }}</h5></li>
-  </ul>
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark"><tr>
+      <th>Stat</th>
+      <th>Details</th>
+    </tr></thead>
+    <tr>
+      <td>Cookies</td>
+      <td>{{ cookies }}</td>
+    </tr>
+    <tr>
+      <td>Total amount of cookies you've earned</td>
+      <td>{{ total_cookies }}</td>
+    </tr>
+    <tr>
+      <td>15 second time trial</td>
+      <td>{{ trial_15_sec }}</td>
+    </tr>
+    <tr>
+      <td>30 second time trial</td>
+      <td>{{ trial_30_sec }}</td>
+    </tr>
+  </table>
 
+  <br><br><br>
+
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark"><tr>
+      <th>Achievement</th>
+      <th>Date earned</th>
+  </table>
 {% endblock content %}
