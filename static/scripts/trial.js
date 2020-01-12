@@ -1,6 +1,7 @@
 var cookie_img = document.getElementById("cookie-img");
 cookies_clicked = 0;
-seconds = document.getElementById("timer").innerHTML;
+timer = document.getElementById("timer");
+seconds = timer.innerHTML;
 
 var scrollover = function(e){
   var rect = e.target.getBoundingClientRect();
@@ -30,7 +31,7 @@ var cookie_click = function(e){
       document.getElementById("filler").style.height= '29.8%';
     }, 150);
     cookies_clicked++;
-    document.getElementById("cookie-num").innerHTML = cookie_amnt;
+    document.getElementById("cookie-num").innerHTML = cookies_clicked;
   };
 };
 
@@ -44,6 +45,25 @@ var pass_trial_data = function() {
   });
 }
 
+var timerInterval = setInterval
+
+var start_timer = function() {
+  document.getElementById("starttimer").remove();
+  var timeInterval = setInterval(function() {
+    if (seconds <= 1) {
+      console.log("Trial complete!");
+      clearInterval(timeInterval);
+      timer.innerHTML = "Trial complete! This run will be recorded.";
+      pass_trial_data();
+    } else {
+    --seconds;
+    timer.innerHTML = seconds;
+    }
+  }, 1000);
+}
+
 cookie_img.addEventListener('click', cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
+
+document.getElementById("starttimer").addEventListener('click', start_timer);
