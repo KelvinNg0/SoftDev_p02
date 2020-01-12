@@ -175,9 +175,11 @@ var clicks_interval = setInterval(function() {
   console.log("Just need a blank interval");
 }, 1000000000000)
 
-clearInterval(clicks_interval);
-clicks_interval = setInterval(function() {
-  to_log++;
-  cookie_amnt++;
-  document.getElementById("cookie-num").innerHTML = cookie_amnt;
-}, 1000 / persecond);
+if (persecond > 0) {
+  clearInterval(clicks_interval);
+  clicks_interval = setInterval(function() {
+    to_log++;
+    cookie_amnt++;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
+  }, 1000 / persecond);
+}
