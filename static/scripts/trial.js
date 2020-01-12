@@ -48,12 +48,15 @@ var pass_trial_data = function() {
 var timerInterval = setInterval
 
 var start_timer = function() {
+  cookie_img.addEventListener('click', cookie_click);
+
   document.getElementById("starttimer").remove();
   var timeInterval = setInterval(function() {
     if (seconds <= 1) {
       console.log("Trial complete!");
       clearInterval(timeInterval);
       timer.innerHTML = "Trial complete! This run will be recorded.";
+      cookie_img.removeEventListener('click', cookie_click);
       pass_trial_data();
     } else {
     --seconds;
@@ -62,7 +65,8 @@ var start_timer = function() {
   }, 1000);
 }
 
-cookie_img.addEventListener('click', cookie_click);
+//only allow this when the timer has been started
+//cookie_img.addEventListener('click', cookie_click);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
 
