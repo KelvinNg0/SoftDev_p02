@@ -141,7 +141,7 @@ def pass_info():
 	return jsonify(info_dict)
 
 @app.route("/api/perks/<perk_id>")
-def pass_task_info():
+def pass_task_info(perk_id):
 	db = sqlite3.connect("database.db")
 	c = db.cursor()
 
@@ -150,7 +150,7 @@ def pass_task_info():
 
 	db.commit()
 	db.close()
-	#print(jsonify(info_dict))
+	print(jsonify(info_dict))
 	return jsonify(info_dict)
 
 if __name__ == "__main__":

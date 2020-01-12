@@ -87,6 +87,7 @@ cursor_button.addEventListener('click', function(e) {
 
 var perks = []
 setInterval(  function(){
+    var cursor_id = 0
     var request = new XMLHttpRequest();
     request.open("GET", "/api");
     request.onload = function() {
@@ -97,23 +98,23 @@ setInterval(  function(){
     //console.log(perks);
     if (perks.includes("0")){
       var new_cursor_button = cursor_button.cloneNode(true);
-      console.log("u got a zero");
       new_cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor 2 [100 cookies]";
       new_cursor_button.addEventListener('click', function(e) {
         shop(1);
       });
       cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
       cursor_button = new_cursor_button;
+      cursor_id = 1
     };
     if (perks.includes("1")){
       var new_cursor_button = cursor_button.cloneNode(true);
-      console.log("u got a zero");
       new_cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor 3 [250 cookies]";
       new_cursor_button.addEventListener('click', function(e) {
         shop(2);
       });
       cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
       cursor_button = new_cursor_button;
+      cursor_id = 2
     };
     if (perks.includes("2")){
       var new_cursor_button = cursor_button.cloneNode(true);
@@ -123,6 +124,7 @@ setInterval(  function(){
       });
       cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
       cursor_button = new_cursor_button;
+      cursor_id = 3
     };
     if (perks.includes("3")){
       var new_cursor_button = cursor_button.cloneNode(true);
@@ -132,8 +134,21 @@ setInterval(  function(){
       });
       cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
       cursor_button = new_cursor_button;
+      cursor_id = 4
     };
     pass_cookies_to_flask();
+    var request = new XMLHttpRequest();
+    request.open("GET", "/api/perks/" + cursor_id);
+    request.onload = function() {
+      console.log(this.response);
+      var data = JSON.parse(this.response);
+      if (cookie_amnt < data["cost"]){
+        cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
+      } else{
+        cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-white";
+      };
+    };
+    request.send();
   },
 300);
 
