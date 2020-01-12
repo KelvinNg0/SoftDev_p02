@@ -139,3 +139,10 @@ justinS -- 2020-01-11 19:42
 justinS -- 2020-01-11 22:20
   - when perks only appear when previous tier is purchased
   - perks change color depending on whether or not the user has enough money
+
+kevinL -- 2020-01-12 11:00
+  - Most of the trial page is done (not the best CSS/layout work though)
+    - Made trials 15/30secs rather than 30/60secs because don't want to stay too long for the video demo
+    - Trial data saves to database; recording that on the profile page as well.
+    - A smaller amount of clicks than what you previously had will not overwrite what you had.
+    - You are not allowed to "cheat" on the trials.
