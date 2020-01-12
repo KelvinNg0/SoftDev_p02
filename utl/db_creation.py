@@ -15,7 +15,8 @@ def init_db():
             password TEXT,
             clicks INTEGER,
             total_clicks INTEGER,
-            perk_earned_ids TEXT,
+            perk_0_lvl INTEGER,
+            perk_1_lvl INTEGER,
             achievements_earned_ids TEXT,
             trial_15_sec INTEGER,
             trial_30_sec INTEGER
@@ -55,11 +56,8 @@ def add_perks():
     c = db.cursor()
 
     #In order: ID, name of perk, description of perk, cost of perk
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (0, "Cursor", "Generates clicks while idle!", 20))
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (1, "Cursor 2", "Generates clicks while idle!", 100))
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (2, "Cursor 3", "Generates clicks while idle!", 250))
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (3, "Cursor 4", "Generates clicks while idle!", 500))
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (4, "Cursor 5", "Generates clicks while idle!", 1000))
+    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (0, "Cursor", "Generates 0.1 cookies while idle!", 10))
+    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (0, "Grandma", "Generates 1 cookie while idle!", 100))
 
     db.commit() #save changes
     db.close()

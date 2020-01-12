@@ -25,7 +25,7 @@ def addAccount(username, password):
 
     c.execute(
         "INSERT INTO accounts VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-        (username, password, 0, 0, "", "", 0, 0)
+        (username, password, 0, 0, 0, 0, "", 0, 0)
     )
 
     db.commit()
@@ -85,11 +85,12 @@ def buy_perk(username, id):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
-    c.execute("SELECT perk_earned_ids FROM accounts WHERE username = (?)", (username,))
-    ids = c.fetchall()[0][0]
-    ids += str(id) + ","
-    #print("Perk IDs (updated): " + ids)
-    c.execute("UPDATE accounts SET perk_earned_ids = (?) WHERE username = (?)", (ids, username,))
+    switch (int(id))
+        case 0: c.execute("UPDATE accounts SET perk_0_lvl = perk_0_lvl + 1 WHERE username = (?)", (username,))
+                break;
+        case 1: c.execute("UPDATE accounts SET perk_1_lvl = perk_1_lvl + 1 WHERE username = (?)", (username,))
+                break;
+        default: print("This should never run.")
 
     db.commit()
     db.close()
