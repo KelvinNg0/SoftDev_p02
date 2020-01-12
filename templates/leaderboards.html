@@ -2,9 +2,42 @@
 
 {% block content %}
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+<h3>Compare to the accomplishments of others on this site!</h3>
+<h4>How others players performed in the 15 second time trials:</h4>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Amount of clicks</th>
+  </tr>
+  {% for run in leaderboard_15_sec %}
+  <tr>
+    <td>{{run['username']}}</td>
+    <td>{{run['seconds']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br><br><br>
+
+<h4>How others players performed in the 30 second time trials:</h4>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Amount of clicks</th>
+  </tr>
+  {% for run in leaderboard_30_sec %}
+  <tr>
+    <td>{{run['username']}}</td>
+    <td>{{run['seconds']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br><br><br>
+
 <h3>Compare to the accomplishments of others on speedrun.com!</h3>
 <h4>How long these players took to click the cookie a million times: </h4>
-
 <table>
   <tr>
     <th>Placing</th>

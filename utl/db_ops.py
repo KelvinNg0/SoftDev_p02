@@ -111,3 +111,26 @@ def record_trial(username, trial_type, clicks):
 
     db.commit()
     db.close()
+
+def get_leaderboards():
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+
+    leaderboard_15_sec = []
+    c.execute("SELECT username, trial_15_sec FROM accounts WHERE trial_15_sec > 0 ORDER BY trial_15_sec")
+    for row in c:
+        dict = {}
+        dict['username'] = row[0]
+        dict['seconds'] = row[1]
+        leaderboard_15_sec.append(dict)
+
+    leaderboard_30_sec = []
+    c.execute("SELECT username, trial_30_sec FROM accounts WHERE trial_30_sec > 0 ORDER BY trial_30_sec")
+    for row in c:
+        dict = {}
+        dict['username'] = row[0]
+        dict['seconds'] = row[1]
+        leaderboard_30_sec.append(dict)
+
+    db.close()
+    return leaderboard_15_sec, leaderboard_30_sec

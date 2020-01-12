@@ -112,7 +112,11 @@ def profile():
 @app.route('/leaderboards')
 @login_required
 def leaderboards():
-	return render_template("leaderboards.html", runs = api.get_leaderboards())
+	leaderboards = db_ops.get_leaderboards()
+	leaderboard_15_sec = leaderboards[0]
+	leaderboard_30_sec = leaderboards[1]
+	return render_template("leaderboards.html", leaderboard_15_sec = leaderboard_15_sec,
+							leaderboard_30_sec = leaderboard_30_sec, runs = api.get_leaderboards())
 
 @app.route('/trial/fifteensec')
 @login_required
