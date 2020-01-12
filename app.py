@@ -126,6 +126,10 @@ def leaderboards():
 def trial():
 	return render_template("trial.html")
 
+@app.route('/help')
+def help():
+	return render_template('help.html')
+
 # JS related routes ============================================================
 @app.route('/regclicks')
 def reg_clicks():
