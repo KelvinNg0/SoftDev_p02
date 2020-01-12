@@ -6,8 +6,9 @@ body {
   height: 100vh;
 }
 
-h1, h2, h3, h4, h5, th, td {
+h1, h2, h3, h4, h5, th, td, form, a {
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 .container-fluid{

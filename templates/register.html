@@ -10,7 +10,9 @@
 <body>
   {% set msgs = get_flashed_messages() %}
   {% for each in msgs %}
-    <h4> {{ each }} </h4>
+    <div class="alert alert-primary" role="alert">
+      {{ each }}
+    </div>
   {% endfor %}
 
   <h3>Create your account</h3>

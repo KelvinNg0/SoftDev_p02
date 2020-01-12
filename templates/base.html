@@ -13,7 +13,9 @@
 <body>
   {% set msgs = get_flashed_messages() %}
   {% for each in msgs %}
-    <h4> {{ each }} </h4>
+    <div class="alert alert-primary" role="alert">
+      {{ each }}
+    </div>
   {% endfor %}
 
   <nav class="navbar navbar-expand-sm bg-light">
