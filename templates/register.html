@@ -17,16 +17,22 @@
 
   <h3>Create your account</h3>
   <form action="/register" method="post">
-    Username: <input type="text" name="user" required="required">
-    <br><br>
-    Password: <input type="password" name="pw" required="required">
-    <br><br>
-    Confirm password: <input type="password" name="confirmpw" required="required">
-    <br><br>
-    <input type="submit" values="Submit">
-    <br><br>
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" name="user" required="required" class="form-control" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="pw" required="required" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="confirmpw" required="required" class="form-control" placeholder="Same password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
+  <br>
   <a href="/">Go back</a>
 </body>
 </html>
