@@ -6,11 +6,19 @@
       <div class="cookie-display"> <p class="cookie-num" id="cookie-num"></p></div>
       <div style="height:30%;" id="filler"></div>
       <div class="cookie" id="clickbox">
-        <img src="../static/cookie.png" class="cookie-img" id="cookie-img">
+        <img src="static/cookie.png" class="cookie-img" id="cookie-img">
       </div>
-      <h1 id="timer">{{ seconds }}</h1>
+      <div class="form-group">
+        <label>Seconds for the trial:</label>
+        <select class="form-control" id="trialtype">
+          <option>15</option>
+          <option>30</option>
+        </select>
+      </div>
       <button type="button" class="btn btn-primary" id="starttimer">Start trial</button>
+      <br><br>
+      <h2 id="timer">{{ seconds }}</h2>
   </div>
-  <script src="../static/scripts/trial.js"></script>
+  <script src="static/scripts/trial.js"></script>
 </div>
 {% endblock %}

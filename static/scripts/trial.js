@@ -1,7 +1,7 @@
 var cookie_img = document.getElementById("cookie-img");
 cookies_clicked = 0;
-timer = document.getElementById("timer");
-seconds = timer.innerHTML;
+var timer = document.getElementById("timer");
+var trial_type = document.getElementById("trialtype");
 
 var scrollover = function(e){
   var rect = e.target.getBoundingClientRect();
@@ -38,19 +38,20 @@ var cookie_click = function(e){
 var pass_trial_data = function() {
   $.ajax({
     url: "/recordtrial",
-    data: {clicks: cookies_clicked},
+    data: {clicks: cookies_clicked, trial_type: trial_type.options[trial_type.selectedIndex].value},
     success: function (data) {
       console.log("Data received.");
     }
   });
 }
 
-var timerInterval = setInterval
-
 var start_timer = function() {
-  cookie_img.addEventListener('click', cookie_click);
+  var trial_type = document.getElementById("trialtype");
+  var seconds = trial_type.options[trial_type.selectedIndex].value;
+  trial_type.disabled = true;
 
-  document.getElementById("starttimer").remove();
+  cookie_img.addEventListener('click', cookie_click);
+  document.getElementById("starttimer").disabled = true;
   var timeInterval = setInterval(function() {
     if (seconds <= 1) {
       console.log("Trial complete!");
@@ -60,7 +61,7 @@ var start_timer = function() {
       pass_trial_data();
     } else {
     --seconds;
-    timer.innerHTML = seconds;
+    timer.innerHTML = seconds + " seconds remain";
     }
   }, 1000);
 }

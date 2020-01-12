@@ -121,17 +121,10 @@ def leaderboards():
 	return render_template("leaderboards.html", leaderboard_15_sec = leaderboard_15_sec,
 							leaderboard_30_sec = leaderboard_30_sec, runs = api.get_leaderboards())
 
-@app.route('/trial/fifteensec')
+@app.route('/trial')
 @login_required
-def thirty_sec_trial():
-	session['trial'] = "trial_15_sec"
-	return render_template("trial.html", seconds = 15)
-
-@app.route('/trial/thirtysec')
-@login_required
-def one_min_trial():
-	session['trial'] = "trial_30_sec"
-	return render_template("trial.html", seconds = 30)
+def trial():
+	return render_template("trial.html")
 
 # JS related routes ============================================================
 @app.route('/regclicks')
@@ -180,9 +173,14 @@ def pass_task_info(perk_id):
 @app.route('/recordtrial')
 def record_trial():
 	username = session['username']
-	trial_type = session['trial']
+	trial_type = request.args.get('trial_type')
 	num_clicks = request.args.get('clicks')
-	db_ops.record_trial(username, trial_type, num_clicks)
+
+	if (trial_type == "15"):
+		db_ops.record_trial(username, "trial_15_sec", num_clicks)
+	if (trial_type == "30"):
+		db_ops.record_trial(username, "trial_30_sec", num_clicks)
+
 	return "Blah blah blah"
 
 if __name__ == "__main__":
