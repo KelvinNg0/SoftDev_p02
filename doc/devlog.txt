@@ -135,3 +135,7 @@ kevinL -- 2020-01-11
 
 justinS -- 2020-01-11 19:42
   - removes perks when they are purchased
+
+justinS -- 2020-01-11 22:20
+  - when perks only appear when previous tier is purchased
+  - perks change color depending on whether or not the user has enough money
