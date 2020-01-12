@@ -24,7 +24,7 @@ def addAccount(username, password):
     c = db.cursor()
 
     c.execute(
-        "INSERT INTO accounts VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO accounts VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (username, password, 0, 0, 0, 0, "", 0, 0)
     )
 
