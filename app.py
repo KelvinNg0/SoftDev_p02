@@ -103,22 +103,28 @@ def clicker():
 def profile():
 	username = session['username']
 	cookies = db_ops.get_clicks(username) # a tuple, index 0 is cookies, index 1 is total_cookies
-	return render_template("profile.html", name = username, cookies = cookies[0], total_cookies = cookies[1])
+	trials = db_ops.get_trial_data(username) #same here
+
+	return render_template("profile.html",
+		name = username, cookies = cookies[0], total_cookies = cookies[1],
+		trial_15_sec = trials[0], trial_30_sec = trials[1])
 
 @app.route('/leaderboards')
 @login_required
 def leaderboards():
 	return render_template("leaderboards.html", runs = api.get_leaderboards())
 
-@app.route('/trial/thirtysec')
+@app.route('/trial/fifteensec')
 @login_required
 def thirty_sec_trial():
-	return render_template("trial.html", seconds = 30)
+	session['trial'] = "trial_15_sec"
+	return render_template("trial.html", seconds = 15)
 
-@app.route('/trial/onemin')
+@app.route('/trial/thirtysec')
 @login_required
 def one_min_trial():
-	return render_template("trial.html", seconds = 60)
+	session['trial'] = "trial_30_sec"
+	return render_template("trial.html", seconds = 30)
 
 # JS related routes ============================================================
 @app.route('/regclicks')
@@ -163,6 +169,14 @@ def pass_task_info(perk_id):
 	print(jsonify(info_dict))
 	return jsonify(info_dict)
 
+
+@app.route('/recordtrial')
+def record_trial():
+	username = session['username']
+	trial_type = session['trial']
+	num_clicks = request.args.get('clicks')
+	db_ops.record_trial(username, trial_type, num_clicks)
+	return "Blah blah blah"
 
 if __name__ == "__main__":
 	app.debug = True;

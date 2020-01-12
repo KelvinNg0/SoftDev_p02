@@ -17,8 +17,8 @@ def init_db():
             total_clicks INTEGER,
             perk_earned_ids TEXT,
             achievements_earned_ids TEXT,
-            trial_30_sec INTEGER,
-            trial_1_min INTEGER
+            trial_15_sec INTEGER,
+            trial_30_sec INTEGER
         )
         """
     )
