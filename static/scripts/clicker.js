@@ -79,31 +79,11 @@ cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
 
 var building_buttons = []
-var perk0 = document.getElementById("perk0");
-  building_buttons.push(perk0);
-var perk1 = document.getElementById("perk1");
-  building_buttons.push(perk1);
-var perk2 = document.getElementById("perk2");
-  building_buttons.push(perk2);
-var perk3 = document.getElementById("perk3");
-  building_buttons.push(perk3);
-var perk4 = document.getElementById("perk4");
-  building_buttons.push(perk4);
-perk0.addEventListener('click', function(e) {
+var cursor_button = document.getElementById("cursor_button");
+cursor_button.addEventListener('click', function(e) {
   shop(0);
 })
-perk1.addEventListener('click', function(e) {
-  shop(1);
-})
-perk2.addEventListener('click', function(e) {
-  shop(2);
-})
-perk3.addEventListener('click', function(e) {
-  shop(3);
-})
-perk4.addEventListener('click', function(e) {
-  shop(4);
-})
+
 
 var perks = []
 setInterval(  function(){
@@ -116,20 +96,42 @@ setInterval(  function(){
     request.send();
     //console.log(perks);
     if (perks.includes("0")){
-      //console.log("u got a zero");
-      perk0.remove();
+      var new_cursor_button = cursor_button.cloneNode(true);
+      console.log("u got a zero");
+      new_cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor 2 [100 cookies]";
+      new_cursor_button.addEventListener('click', function(e) {
+        shop(1);
+      });
+      cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
+      cursor_button = new_cursor_button;
     };
     if (perks.includes("1")){
-      perk1.remove();
+      var new_cursor_button = cursor_button.cloneNode(true);
+      console.log("u got a zero");
+      new_cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor 3 [250 cookies]";
+      new_cursor_button.addEventListener('click', function(e) {
+        shop(2);
+      });
+      cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
+      cursor_button = new_cursor_button;
     };
     if (perks.includes("2")){
-      perk2.remove();
+      var new_cursor_button = cursor_button.cloneNode(true);
+      new_cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor 4 [500 cookies]";
+      new_cursor_button.addEventListener('click', function(e) {
+        shop(3);
+      });
+      cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
+      cursor_button = new_cursor_button;
     };
     if (perks.includes("3")){
-      perk3.remove();
-    };
-    if (perks.includes("4")){
-      perk4.remove();
+      var new_cursor_button = cursor_button.cloneNode(true);
+      cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor 5 [1000 cookies]";
+      new_cursor_button.addEventListener('click', function(e) {
+        shop(3);
+      });
+      cursor_button.parentNode.replaceChild(new_cursor_button, cursor_button);
+      cursor_button = new_cursor_button;
     };
     pass_cookies_to_flask();
   },

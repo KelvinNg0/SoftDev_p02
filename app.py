@@ -140,6 +140,19 @@ def pass_info():
 	#print(jsonify(info_dict))
 	return jsonify(info_dict)
 
+@app.route("/api/perks/<perk_id>")
+def pass_task_info():
+	db = sqlite3.connect("database.db")
+	c = db.cursor()
+
+	pull_info = c.execute("SELECT * FROM perks WHERE id = (?)", (perk_id,)).fetchall()[0]
+	info_dict = {"name": pull_info[1], "description": pull_info[2], "cost": pull_info[3]}
+
+	db.commit()
+	db.close()
+	#print(jsonify(info_dict))
+	return jsonify(info_dict)
+
 if __name__ == "__main__":
 	app.debug = True;
 	app.run();
