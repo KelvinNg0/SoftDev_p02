@@ -53,10 +53,10 @@ var start_timer = function() {
   cookie_img.addEventListener('click', cookie_click);
   document.getElementById("starttimer").disabled = true;
   var timeInterval = setInterval(function() {
-    if (seconds <= 1) {
+    if (seconds <= 0) {
       console.log("Trial complete!");
       clearInterval(timeInterval);
-      timer.innerHTML = "Trial complete! This run will be recorded.";
+      alert("Trial complete! This run will be recorded.");
       cookie_img.removeEventListener('click', cookie_click);
       pass_trial_data();
     } else {
