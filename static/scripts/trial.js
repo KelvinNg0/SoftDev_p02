@@ -61,7 +61,7 @@ var start_timer = function() {
       pass_trial_data();
     } else {
     --seconds;
-    timer.innerHTML = seconds + " seconds remain";
+    timer.innerHTML = seconds;
     }
   }, 1000);
 }
