@@ -180,6 +180,12 @@ kelvinN -- 2020-01-13 08:21
 kevinL -- 2020-01-13 08:40
   - Password change feature
 
+kelvinN -- 2020-01-13 09:12
+  - shop complete
+    - amount of cookies decreases once a perk is bought
+    - cost of perk increases everytime it is bought
+  - TODO: add achievements, more perks, and possibly graphics for those perks
+
 kevinL -- 2020-01-13 11:40
   - Better looking trial page
   - Better looking CPS box
