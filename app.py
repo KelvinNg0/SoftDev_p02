@@ -189,4 +189,5 @@ def record_trial():
 
 if __name__ == "__main__":
 	app.debug = True;
+	app.jinja_env.cache = {}
 	app.run();
