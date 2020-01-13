@@ -6,7 +6,7 @@ body {
   height: 100vh;
 }
 
-h1, h2, h3, h4, h5, th, td, form, p, .btn-warning {
+h1, h2, h3, h4, h5, th, td, form, p, .btn-warning, a {
   margin-left: 10px;
   margin-right: 10px;
 }
