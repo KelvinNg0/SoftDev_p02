@@ -161,3 +161,13 @@ kevinL -- 2020-01-12 18:30
     - leaderboards
     - Profile page
   - Also created a help page
+
+kevinL -- 2020-01-12 20:45
+  - Design doc updates
+    - Discard the different background and fonts thing as a perk
+    - Change the trial times to strictly 15s and 30s
+    - Update database layout to reflect the current state of the project
+    - Better explanations for the notes below the database layout
+    - Explain that a manual save button is no longer needed thanks to autosaving much more frequently
+    - Update site map to reflect the current state of the project (add JavaScript-only routes)
+    - Minor adjustments to the component map
