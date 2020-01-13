@@ -83,21 +83,11 @@ cookie_img.addEventListener('mouseout', scrollover);
 
 var building_buttons = []
 var cursor_button = document.getElementById("cursor_button");
-cursor_button.addEventListener('click', function(e) {
-  shop(0);
-  persecond += 0.12; //weird float precision stuff
-  persecond = Math.floor(persecond * 10) / 10;
-  persecond_tracker.innerHTML = persecond;
-  clearInterval(clicks_interval);
-  clicks_interval = setInterval(function() {
-    to_log++;
-    cookie_amnt++;
-    document.getElementById("cookie-num").innerHTML = cookie_amnt;
-  }, 1000 / persecond);
-})
+
 
 var perk_0_lvl = 0
 var perk_1_lvl = 0
+var perk_0_price = 0
 
 setInterval(  function(){
     var cursor_id = 0
@@ -161,9 +151,9 @@ setInterval(  function(){
     request.onload = function() {
       //console.log(this.response);
       var data = JSON.parse(this.response);
-      var price = Math.floor(data["cost"] * ((1.15) ** perk_0_lvl));
-      cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor [" + price + "]";
-      if (cookie_amnt < price){
+      perk_0_price = Math.floor(data["cost"] * ((1.15) ** perk_0_lvl));
+      cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor [" + perk_0_price + "]";
+      if (cookie_amnt < perk_0_price){
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-white";
@@ -172,6 +162,23 @@ setInterval(  function(){
     request.send();
   },
 300);
+
+cursor_button.addEventListener('click', function(e) {
+  if (cookie_amnt >= perk_0_price){
+    shop(0);
+    cookie_amnt -= perk_0_price;
+    to_log -= perk_0_price;
+    persecond += 0.12; //weird float precision stuff
+    persecond = Math.floor(persecond * 10) / 10;
+    persecond_tracker.innerHTML = persecond;
+    clearInterval(clicks_interval);
+    clicks_interval = setInterval(function() {
+      to_log++;
+      cookie_amnt++;
+      document.getElementById("cookie-num").innerHTML = cookie_amnt;
+    }, 1000 / persecond);
+  };
+})
 
 var clicks_interval = setInterval(function() {
   console.log("Just need a blank interval");
