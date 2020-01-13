@@ -4,6 +4,9 @@
 
   <h1>Welcome, {{ name }}! </h1>
 
+  <a href="/changepw" class="btn btn-warning">Change password</a>
+  <br><br>
+
   <table class="table table-hover table-bordered">
     <thead class="thead-dark"><tr>
       <th>Stat</th>
@@ -18,11 +21,11 @@
       <td>{{ total_cookies }}</td>
     </tr>
     <tr>
-      <td>15 second time trial</td>
+      <td>Most clicks during a 15 second time trial</td>
       <td>{{ trial_15_sec }}</td>
     </tr>
     <tr>
-      <td>30 second time trial</td>
+      <td>Most clicks during a 30 second time trial</td>
       <td>{{ trial_30_sec }}</td>
     </tr>
   </table>
