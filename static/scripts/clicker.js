@@ -159,9 +159,11 @@ setInterval(  function(){
     var request = new XMLHttpRequest();
     request.open("GET", "/api/perks/" + cursor_id);
     request.onload = function() {
-      console.log(this.response);
+      //console.log(this.response);
       var data = JSON.parse(this.response);
-      if (cookie_amnt < data["cost"]){
+      var price = Math.floor(data["cost"] * ((1.15) ** perk_0_lvl));
+      cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor [" + price + "]";
+      if (cookie_amnt < price){
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-white";
