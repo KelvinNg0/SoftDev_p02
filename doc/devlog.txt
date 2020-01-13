@@ -130,7 +130,8 @@ kevinL -- 2020-01-10 11:40
 kevinL -- 2020-01-11
   - Un-ugly navbar
   - Insert profile data from database into profile page
-  - Making the shop look better (had to make the border not white because sometimes the boxes would stay highlighted after clicking off)
+  - Making the shop look better (had to make the border not white because sometimes the boxes would stay highlighted
+    after clicking off)
   - Clicking shop items will save perk IDs to the database for the user now
 
 justinS -- 2020-01-11 19:42
@@ -171,3 +172,10 @@ kevinL -- 2020-01-12 20:45
     - Explain that a manual save button is no longer needed thanks to autosaving much more frequently
     - Update site map to reflect the current state of the project (add JavaScript-only routes)
     - Minor adjustments to the component map
+
+kelvinN -- 2020-01-13 08:21
+  - TODO for today: fix shop, implement password change, increase item price every purchase, decrease amount of cookies
+                    every purchase
+
+kevinL -- 2020-01-13 08:40
+  - Password change feature

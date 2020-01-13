@@ -112,6 +112,28 @@ def profile():
 		name = username, cookies = cookies[0], total_cookies = cookies[1],
 		trial_15_sec = trials[0], trial_30_sec = trials[1])
 
+@app.route("/changepw")
+@login_required
+def changepw():
+	return render_template('changepw.html')
+
+@app.route('/confirmpw', methods=['POST'])
+@login_required
+def confirmpw():
+	username = session['username']
+	oldpw = password = request.form.get('oldpw')
+	newpw = password = request.form.get('newpw')
+	confirmpw = password = request.form.get('confirmpw')
+
+	if (db_ops.authenticate(username, oldpw) and newpw == confirmpw):
+		db_ops.changepw(username, newpw)
+		flash("Your password has been successfully changed!")
+		return redirect(url_for('profile'))
+
+	else:
+		flash("The credentials you provided were invalid.")
+		return redirect(url_for('changepw'))
+
 @app.route('/leaderboards')
 @login_required
 def leaderboards():

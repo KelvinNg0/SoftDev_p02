@@ -46,6 +46,15 @@ def authenticate(username, password):
 
     return password == row[1]
 
+def changepw(username, password):
+    db = sqlite3.connect(DB_FILE)
+    c = db.cursor()
+
+    c.execute("UPDATE accounts SET password = (?) WHERE username = (?)", (password, username,))
+
+    db.commit()
+    db.close()
+
 def reg_clicks(username, num_clicks):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
