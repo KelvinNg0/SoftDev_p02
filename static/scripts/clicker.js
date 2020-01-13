@@ -167,6 +167,7 @@ cursor_button.addEventListener('click', function(e) {
   if (cookie_amnt >= perk_0_price){
     shop(0);
     cookie_amnt -= perk_0_price;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
     to_log -= perk_0_price;
     persecond += 0.12; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
