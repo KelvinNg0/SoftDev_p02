@@ -154,10 +154,10 @@ def calc_persecond(username):
     persecond = 0
     c.execute("SELECT perk_0_lvl, perk_1_lvl FROM accounts WHERE username = (?)", (username,))
 
+    perk_0_lvl = 0
+    perk_1_lvl = 0
+
     for row in c:
-        print(row)
-        print(row[0])
-        print(row[1])
         perk_0_lvl = row[0]
         perk_1_lvl = row[1]
 

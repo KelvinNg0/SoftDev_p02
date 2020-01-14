@@ -145,7 +145,7 @@ cursor_button.addEventListener('click', function(e) {
     shop(0);
     cookie_amnt -= perk_0_price;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
-    to_log -= perk_0_price;
+    //to_log -= perk_0_price; this breaks the counter, decrease cookies elsewhere
     persecond += 0.12; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
@@ -163,7 +163,7 @@ grandma_button.addEventListener('click', function(e) {
     shop(1);
     cookie_amnt -= perk_1_price;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
-    to_log -= perk_1_price;
+    //to_log -= perk_1_price; this too
     persecond += 1.02; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
@@ -177,7 +177,7 @@ grandma_button.addEventListener('click', function(e) {
 })
 
 var clicks_interval = setInterval(function() {
-  console.log("Just need a blank interval");
+  //console.log("Just need a blank interval");
 }, 1000000000000)
 
 if (persecond > 0) {
