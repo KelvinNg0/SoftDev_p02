@@ -69,10 +69,11 @@ var pass_cookies_to_flask = function() {
 
 var shop = function(id) {
   var price = 0;
-  if (id === 0) {
+  if (id === 0)
     price = perk_0_price;
-    //price = perk_1_price;
-  }
+
+  if (id === 1)
+    price = perk_1_price;
 
   $.ajax({
     url: "/shop",
@@ -138,7 +139,7 @@ setInterval(  function(){
     };
     request.send();
   },
-300);
+1000);
 
 cursor_button.addEventListener('click', function(e) {
   if (cookie_amnt >= perk_0_price){

@@ -100,6 +100,7 @@ def buy_perk(username, id, price):
     if (int(id) == 1):
         c.execute("UPDATE accounts SET perk_1_lvl = perk_1_lvl + 1 WHERE username = (?)", (username,))
 
+    print(price);
     c.execute("UPDATE accounts SET clicks = clicks - (?) WHERE username = (?)", (price, username))
 
     db.commit()
