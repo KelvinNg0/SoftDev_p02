@@ -56,8 +56,8 @@ def add_perks():
     c = db.cursor()
 
     #In order: ID, name of perk, description of perk, cost of perk
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (0, "Cursor", "Generates 0.1 cookies while idle!", 10))
-    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (0, "Grandma", "Generates 1 cookie while idle!", 100))
+    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (0, "Cursor", "Generates 0.1 cookies while idle!", 15))
+    c.execute("INSERT INTO perks VALUES (?, ?, ?, ?)", (1, "Grandma", "Generates 1 cookie while idle!", 100))
 
     db.commit() #save changes
     db.close()
