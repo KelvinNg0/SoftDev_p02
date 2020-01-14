@@ -72,10 +72,11 @@ var pass_cookies_to_flask = function() {
 
 var shop = function(id) {
   var price = 0;
-  if (id === 0) {
+  if (id === 0)
     price = perk_0_price;
-    //price = perk_1_price;
-  }
+
+  if (id === 1)
+    price = perk_1_price;
 
   $.ajax({
     url: "/shop",
@@ -144,14 +145,14 @@ setInterval(  function(){
     };
     request.send();
   },
-300);
+1000);
 
 cursor_button.addEventListener('click', function(e) {
   if (cookie_amnt >= perk_0_price){
     shop(0);
     cookie_amnt -= perk_0_price;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
-    to_log -= perk_0_price;
+    //to_log -= perk_0_price; this breaks the counter, decrease cookies elsewhere
     persecond += 0.12; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
@@ -169,7 +170,7 @@ grandma_button.addEventListener('click', function(e) {
     shop(1);
     cookie_amnt -= perk_1_price;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
-    to_log -= perk_1_price;
+    //to_log -= perk_1_price; this too
     persecond += 1.02; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
@@ -183,7 +184,7 @@ grandma_button.addEventListener('click', function(e) {
 })
 
 var clicks_interval = setInterval(function() {
-  console.log("Just need a blank interval");
+  //console.log("Just need a blank interval");
 }, 1000000000000)
 
 if (persecond > 0) {

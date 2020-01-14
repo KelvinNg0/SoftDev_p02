@@ -189,3 +189,20 @@ kelvinN -- 2020-01-13 09:12
 kevinL -- 2020-01-13 11:40
   - Better looking trial page
   - Better looking CPS box
+
+kelvinN -- 2020-01-14 08:10
+  - TODO for today: create better look for login page, add more perks
+  - ditching achievement idea for now
+
+kelvinN -- 2020-01-14 08:39
+  - updated design doc to match current design of website
+
+kevinL -- 2020-01-14 08:40
+  - Minor CSS tweaks to beautify the website overall
+
+kelvinN -- 2020-01-14 13:17
+  - bugs: 
+    - can still click cookie after the timer hits zero in timed trials
+    - cant press the start trial button after just completing a trial unless you reload
+    - buying grandma perk doesnt decrease the amount of cookies in db (but cursor does)
+    - occasional negative amount of cookies

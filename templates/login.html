@@ -15,7 +15,15 @@
     </div>
   {% endfor %}
 
-  <h3>Sign in to access this website</h3>
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Cookie Clicker!</h1>
+    <p class="lead">Earn cookies, earn ways to obtain cookies faster, and compete with others!</p>
+    <hr class="my-4">
+    <p>Make an account to save your progress and compare with others.<p>
+    <a class="btn btn-primary btn-lg" href="/signup">Sign up</a>
+  </div>
+
+  <h3 class="font-weight-bold">Sign in to play Cookie Clicker</h3>
   <form action="/login" method="post">
     <div class="form-group">
       <label>Username</label>
@@ -27,8 +35,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-
-  <br>
-  <a href=/signup>&nbsp; Don't have an account? Create one now.</a>
 </body>
 </html>
