@@ -193,3 +193,6 @@ kevinL -- 2020-01-13 11:40
 kelvinN -- 2020-01-14 08:10
   - TODO for today: create better look for login page, add more perks
   - ditching achievement idea for now
+
+kelvinN -- 2020-01-14 08:39
+  - updated design doc to match current design of website
