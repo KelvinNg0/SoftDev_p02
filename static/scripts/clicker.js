@@ -120,7 +120,7 @@ setInterval(  function(){
       var data = JSON.parse(this.response);
       perk_0_price = Math.floor(data["cost"] * ((1.15) ** perk_0_lvl));
       cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor [" + perk_0_price + "]";
-      cursor_button.title = data["description"] + "<br>" + perk_0_lvl  + " cursors producing <b>" + (.1 * perk_0_lvl) + "</b>cookies per second";
+      cursor_button.title = data["description"] + "\n" + perk_0_lvl  + " cursors producing " + (.1 * perk_0_lvl).toFixed(1) + " cookies per second " + ((persecond > 0) ? ((.1 * perk_0_lvl) / persecond * 100).toFixed(1) : 0) + "% of total CpS";
       if (cookie_amnt < perk_0_price){
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
@@ -136,7 +136,7 @@ setInterval(  function(){
       var data = JSON.parse(this.response);
       perk_1_price = Math.floor(data["cost"] * ((1.15) ** perk_1_lvl));
       grandma_button.innerHTML = "<img width=\"75px\" src=\"static/grandma.png\" class= \".img-fluid building-icon\">Grandma [" + perk_1_price + "]";
-      grandma_button.title = data["description"];
+      grandma_button.title = data["description"] + "\n" + perk_1_lvl  + " grandmas producing " + (1 * perk_1_lvl) + " cookies per second " + ((persecond > 0) ? ((1 * perk_1_lvl) / persecond * 100).toFixed(1) : 0) + "% of total CpS";
       if (cookie_amnt < perk_1_price){
         grandma_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
