@@ -204,3 +204,4 @@ kelvinN -- 2020-01-14 13:17
   - bugs: 
     - can still click cookie after the timer hits zero in timed trials
     - cant press the start trial button after just completing a trial unless you reload
+    - occasional negative amount of cookies
