@@ -199,3 +199,8 @@ kelvinN -- 2020-01-14 08:39
 
 kevinL -- 2020-01-14 08:40
   - Minor CSS tweaks to beautify the website overall
+
+kelvinN -- 2020-01-14 13:17
+  - bugs: 
+    - can still click cookie after the timer hits zero in timed trials
+    - cant press the start trial button after just completing a trial unless you reload
