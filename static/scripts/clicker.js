@@ -19,6 +19,9 @@ document.body.onload = function() {
 };
 document.getElementById("cookie-num").innerHTML = cookie_amnt;
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip({html:true});
+});
 //(rect["x"] + rect["width"] / 2) + "," + (rect["y"] + rect["width"] / 2) + "," + (rect["width"] / 2));
 
 var scrollover = function(e){
@@ -95,6 +98,7 @@ var grandma_button = document.getElementById("grandma_button");
 var perk_0_lvl = 0
 var perk_1_lvl = 0
 var perk_0_price = 0
+var perk_1_price = 0
 
 setInterval(  function(){
     var cursor_id = 0;
@@ -115,6 +119,7 @@ setInterval(  function(){
       var data = JSON.parse(this.response);
       perk_0_price = Math.floor(data["cost"] * ((1.15) ** perk_0_lvl));
       cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor [" + perk_0_price + "]";
+      cursor_button.title = data["description"] + "<br>" + perk_0_lvl  + " cursors producing <b>" + (.1 * perk_0_lvl) + "</b>cookies per second";
       if (cookie_amnt < perk_0_price){
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
@@ -130,6 +135,7 @@ setInterval(  function(){
       var data = JSON.parse(this.response);
       perk_1_price = Math.floor(data["cost"] * ((1.15) ** perk_1_lvl));
       grandma_button.innerHTML = "<img width=\"75px\" src=\"static/grandma.png\" class= \".img-fluid building-icon\">Grandma [" + perk_1_price + "]";
+      grandma_button.title = data["description"];
       if (cookie_amnt < perk_1_price){
         grandma_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
