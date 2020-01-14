@@ -15,7 +15,12 @@
     </div>
   {% endfor %}
 
-  <h3>Create your account</h3>
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Cookie Clicker!</h1>
+    <p class="lead">Earn cookies, earn ways to make cookies faster, and compete with others!</p>
+  </div>
+
+  <h3 class="font-weight-bold">Create your account</h3>
   <form action="/register" method="post">
     <div class="form-group">
       <label>Username</label>
@@ -26,7 +31,7 @@
       <input type="password" name="pw" required="required" class="form-control" placeholder="Password">
     </div>
     <div class="form-group">
-      <label>Password</label>
+      <label>Confirm password</label>
       <input type="password" name="confirmpw" required="required" class="form-control" placeholder="Same password">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

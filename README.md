@@ -17,7 +17,7 @@
   - Frontend (templates, routes, styling with Bootstrap)
 
 ## Website Description
-Leaderboard data is fetched from the [speedrun.com REST API](https://docs.google.com/document/d/1Hk-0V1E2hvxjx1BrCcwk33yCHaMnbO_hza4GzxjVcZM).
+Leaderboard data is fetched from the [speedrun.com REST API](https://docs.google.com/document/d/1Hk-0V1E2hvxjx1BrCcwk33yCHaMnbO_hza4GzxjVcZM). We will plaster that data as a table on our website's leaderboards page, so that users may compare their accomplishments with those from all over the world.
 
 This website is a recreation of [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/) with the skills we've learned over the course of this semester. Clicks will function as the currency of this game. Currency may be used to purchase perks such as autoclickers. An account will be required so that progress can be saved. There will also be a leaderboards page so that you can compare your ability with others. One section is for comparing stats with other users of the website, and another will be for comparing with top players, whose data will be sourced from the speedrun.com API.
 

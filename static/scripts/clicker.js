@@ -19,6 +19,9 @@ document.body.onload = function() {
 };
 document.getElementById("cookie-num").innerHTML = cookie_amnt;
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip({html:true});
+});
 //(rect["x"] + rect["width"] / 2) + "," + (rect["y"] + rect["width"] / 2) + "," + (rect["width"] / 2));
 
 var scrollover = function(e){
@@ -69,10 +72,11 @@ var pass_cookies_to_flask = function() {
 
 var shop = function(id) {
   var price = 0;
-  if (id === 0) {
+  if (id === 0)
     price = perk_0_price;
-    //price = perk_1_price;
-  }
+
+  if (id === 1)
+    price = perk_1_price;
 
   $.ajax({
     url: "/shop",
@@ -95,6 +99,7 @@ var grandma_button = document.getElementById("grandma_button");
 var perk_0_lvl = 0
 var perk_1_lvl = 0
 var perk_0_price = 0
+var perk_1_price = 0
 
 setInterval(  function(){
     var cursor_id = 0;
@@ -115,6 +120,7 @@ setInterval(  function(){
       var data = JSON.parse(this.response);
       perk_0_price = Math.floor(data["cost"] * ((1.15) ** perk_0_lvl));
       cursor_button.innerHTML = "<img width=\"75px\" src=\"static/cursor.png\" class= \".img-fluid building-icon\">Cursor [" + perk_0_price + "]";
+      cursor_button.title = data["description"] + "<br>" + perk_0_lvl  + " cursors producing <b>" + (.1 * perk_0_lvl) + "</b>cookies per second";
       if (cookie_amnt < perk_0_price){
         cursor_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
@@ -130,6 +136,7 @@ setInterval(  function(){
       var data = JSON.parse(this.response);
       perk_1_price = Math.floor(data["cost"] * ((1.15) ** perk_1_lvl));
       grandma_button.innerHTML = "<img width=\"75px\" src=\"static/grandma.png\" class= \".img-fluid building-icon\">Grandma [" + perk_1_price + "]";
+      grandma_button.title = data["description"];
       if (cookie_amnt < perk_1_price){
         grandma_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
       } else{
@@ -138,14 +145,14 @@ setInterval(  function(){
     };
     request.send();
   },
-300);
+1000);
 
 cursor_button.addEventListener('click', function(e) {
   if (cookie_amnt >= perk_0_price){
     shop(0);
     cookie_amnt -= perk_0_price;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
-    to_log -= perk_0_price;
+    //to_log -= perk_0_price; this breaks the counter, decrease cookies elsewhere
     persecond += 0.12; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
@@ -163,7 +170,7 @@ grandma_button.addEventListener('click', function(e) {
     shop(1);
     cookie_amnt -= perk_1_price;
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
-    to_log -= perk_1_price;
+    //to_log -= perk_1_price; this too
     persecond += 1.02; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
@@ -177,7 +184,7 @@ grandma_button.addEventListener('click', function(e) {
 })
 
 var clicks_interval = setInterval(function() {
-  console.log("Just need a blank interval");
+  //console.log("Just need a blank interval");
 }, 1000000000000)
 
 if (persecond > 0) {
