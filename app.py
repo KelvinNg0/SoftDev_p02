@@ -164,8 +164,9 @@ def reg_clicks():
 def shop():
 	username = session['username']
 	perk_id = request.args.get('id')
-	print("Perk ID selected: " + perk_id)
-	db_ops.buy_perk(username, perk_id)
+	price = request.args.get('price')
+
+	db_ops.buy_perk(username, perk_id, price)
 	return "Same here."
 
 @app.route("/api")

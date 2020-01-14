@@ -90,14 +90,17 @@ def get_trial_data(username):
     return trial_15_sec, trial_30_sec
 
 # Will necessitate JS that prevents buying something you already have + don't have the cookies for
-def buy_perk(username, id):
+def buy_perk(username, id, price):
     db = sqlite3.connect(DB_FILE)
     c = db.cursor()
 
     if (int(id) == 0):
         c.execute("UPDATE accounts SET perk_0_lvl = perk_0_lvl + 1 WHERE username = (?)", (username,))
+
     if (int(id) == 1):
         c.execute("UPDATE accounts SET perk_1_lvl = perk_1_lvl + 1 WHERE username = (?)", (username,))
+
+    c.execute("UPDATE accounts SET clicks = clicks - (?) WHERE username = (?)", (price, username))
 
     db.commit()
     db.close()

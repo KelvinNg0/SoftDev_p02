@@ -68,9 +68,15 @@ var pass_cookies_to_flask = function() {
 }
 
 var shop = function(id) {
+  var price = 0;
+  if (id === 0) {
+    price = perk_0_price;
+    //price = perk_1_price;
+  }
+
   $.ajax({
     url: "/shop",
-    data: {id: id},
+    data: {id: id, price: price},
     success: function (data) {
       console.log("Perk purchased successfully.");
     }
