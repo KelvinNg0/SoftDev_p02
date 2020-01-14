@@ -80,3 +80,9 @@ h1, h2, h3, h4, h5, th, td, form, p, .btn-warning, a {
   max-width: 10vh;
   max-height: auto;
 }
+
+.grandma-display{
+  height:20vh;
+  background-image: url("../grandma_background.png");
+  background-repeat: repeat-x;
+}
