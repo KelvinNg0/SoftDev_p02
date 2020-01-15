@@ -24,8 +24,8 @@ def addAccount(username, password):
     c = db.cursor()
 
     c.execute(
-        "INSERT INTO accounts VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        (username, password, 0, 0, 0, 0, "", 0, 0)
+        "INSERT INTO accounts VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (username, password, 0, 0, 0, 0, 0, "", 0, 0)
     )
 
     db.commit()
@@ -100,6 +100,9 @@ def buy_perk(username, id, price):
     if (int(id) == 1):
         c.execute("UPDATE accounts SET perk_1_lvl = perk_1_lvl + 1 WHERE username = (?)", (username,))
 
+    if (int(id) == 2):
+        c.execute("UPDATE accounts SET perk_2_lvl = perk_2_lvl + 1 WHERE username = (?)", (username,))
+
     print(price);
     c.execute("UPDATE accounts SET clicks = clicks - (?) WHERE username = (?)", (price, username))
 
@@ -153,17 +156,20 @@ def calc_persecond(username):
     c = db.cursor()
 
     persecond = 0
-    c.execute("SELECT perk_0_lvl, perk_1_lvl FROM accounts WHERE username = (?)", (username,))
+    c.execute("SELECT perk_0_lvl, perk_1_lvl, perk_2_lvl FROM accounts WHERE username = (?)", (username,))
 
     perk_0_lvl = 0
     perk_1_lvl = 0
+    perk_2_lvl = 0
 
     for row in c:
         perk_0_lvl = row[0]
         perk_1_lvl = row[1]
+        perk_2_lvl = row[2]
 
     persecond += (perk_0_lvl * 0.1)
     persecond += (perk_1_lvl)
+    persecond += (perk_1_lvl * 8)
     persecond = int(persecond * 10) / 10 #truncate the imprecise floats
 
     db.close()
