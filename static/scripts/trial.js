@@ -67,6 +67,6 @@ var start_trial = function() {
   }, 1000);
 }
 
-document.getElementById("starttimer").addEventListener('click', start_timer);
+document.getElementById("starttimer").addEventListener('click', start_trial);
 cookie_img.addEventListener('mousemove', scrollover);
 cookie_img.addEventListener('mouseout', scrollover);
