@@ -78,6 +78,12 @@ var shop = function(id) {
   if (id === 1)
     price = perk_1_price;
 
+  if (id === 2)
+    price = perk_2_price;
+
+  if (id === 3)
+    price = perk_3_price;
+
   $.ajax({
     url: "/shop",
     data: {id: id, price: price},
@@ -94,22 +100,32 @@ cookie_img.addEventListener('mouseout', scrollover);
 var building_buttons = []
 var cursor_button = document.getElementById("cursor_button");
 var grandma_button = document.getElementById("grandma_button");
+var farm_button = document.getElementById("farm_button");
+var mine_button = document.getElementById("mine_button");
 
 
-var perk_0_lvl = 0
-var perk_1_lvl = 0
-var perk_0_price = 0
-var perk_1_price = 0
+var perk_0_lvl = 0;
+var perk_1_lvl = 0;
+var perk_2_lvl = 0;
+var perk_3_lvl = 0;
+var perk_0_price = 0;
+var perk_1_price = 0;
+var perk_2_price = 0;
+var perk_3_price = 0;
 
 setInterval(  function(){
     var cursor_id = 0;
     var grandma_id = 1;
+    var farm_id = 2;
+    var mine_id = 3;
     var request = new XMLHttpRequest();
     request.open("GET", "/api");
     request.onload = function() {
       var data = JSON.parse(this.response);
       perk_0_lvl = data.perk_0_lvl;
       perk_1_lvl = data.perk_1_lvl;
+      perk_2_lvl = data.perk_2_lvl;
+      perk_3_lvl = data.perk_3_lvl;
     };
     request.send();
     pass_cookies_to_flask();
@@ -144,6 +160,36 @@ setInterval(  function(){
       };
     };
     request.send();
+    var request = new XMLHttpRequest();
+    request.open("GET", "/api/perks/" + farm_id);
+    request.onload = function() {
+      //console.log(this.response);
+      var data = JSON.parse(this.response);
+      perk_2_price = Math.floor(data["cost"] * ((1.15) ** perk_2_lvl));
+      farm_button.innerHTML = "<img width=\"75px\" src=\"static/farm.png\" class= \".img-fluid building-icon\">Farm [" + perk_2_price + "]";
+      farm_button.title = data["description"] + "\n" + perk_2_lvl  + " farms producing " + (8 * perk_2_lvl) + " cookies per second " + ((persecond > 0) ? ((8 * perk_2_lvl) / persecond * 100).toFixed(1) : 0) + "% of total CpS";
+      if (cookie_amnt < perk_2_price){
+        farm_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
+      } else{
+        farm_button.className = "btn btn-lg btn-secondary font-weight-bold bg-white";
+      };
+    };
+    request.send();
+    var request = new XMLHttpRequest();
+    request.open("GET", "/api/perks/" + mine_id);
+    request.onload = function() {
+      //console.log(this.response);
+      var data = JSON.parse(this.response);
+      perk_3_price = Math.floor(data["cost"] * ((1.15) ** perk_3_lvl));
+      mine_button.innerHTML = "<img width=\"75px\" src=\"static/mine.png\" class= \".img-fluid building-icon\">Mine [" + perk_3_price + "]";
+      mine_button.title = data["description"] + "\n" + perk_3_lvl  + " farms producing " + (47 * perk_3_lvl) + " cookies per second " + ((persecond > 0) ? ((47 * perk_3_lvl) / persecond * 100).toFixed(1) : 0) + "% of total CpS";
+      if (cookie_amnt < perk_3_price){
+        mine_button.className = "btn btn-lg btn-secondary font-weight-bold bg-grey";
+      } else{
+        mine_button.className = "btn btn-lg btn-secondary font-weight-bold bg-white";
+      };
+    };
+    request.send();
   },
 1000);
 
@@ -172,6 +218,41 @@ grandma_button.addEventListener('click', function(e) {
     document.getElementById("cookie-num").innerHTML = cookie_amnt;
     //to_log -= perk_1_price; this too
     persecond += 1.02; //weird float precision stuff
+    persecond = Math.floor(persecond * 10) / 10;
+    persecond_tracker.innerHTML = persecond;
+    clearInterval(clicks_interval);
+    clicks_interval = setInterval(function() {
+      to_log++;
+      cookie_amnt++;
+      document.getElementById("cookie-num").innerHTML = cookie_amnt;
+    }, 1000 / persecond);
+  };
+})
+
+farm_button.addEventListener('click', function(e) {
+  if (cookie_amnt >= perk_2_price){
+    shop(2);
+    cookie_amnt -= perk_2_price;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
+    //to_log -= perk_1_price; this too
+    persecond += 8.02; //weird float precision stuff
+    persecond = Math.floor(persecond * 10) / 10;
+    persecond_tracker.innerHTML = persecond;
+    clearInterval(clicks_interval);
+    clicks_interval = setInterval(function() {
+      to_log++;
+      cookie_amnt++;
+      document.getElementById("cookie-num").innerHTML = cookie_amnt;
+    }, 1000 / persecond);
+  };
+})
+mine_button.addEventListener('click', function(e) {
+  if (cookie_amnt >= perk_3_price){
+    shop(3);
+    cookie_amnt -= perk_3_price;
+    document.getElementById("cookie-num").innerHTML = cookie_amnt;
+    //to_log -= perk_1_price; this too
+    persecond += 47.02; //weird float precision stuff
     persecond = Math.floor(persecond * 10) / 10;
     persecond_tracker.innerHTML = persecond;
     clearInterval(clicks_interval);
