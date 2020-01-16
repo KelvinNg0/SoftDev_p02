@@ -97,3 +97,9 @@ h1, h2, h3, h4, h5, th, td, form, p, .btn-warning {
   background-image: url("../farm_background.png");
   background-repeat: repeat-x;
 }
+
+.mine-display{
+  height:20vh;
+  background-image: url("../mine_background.png");
+  background-repeat: repeat-x;
+}

@@ -177,6 +177,10 @@ kelvinN -- 2020-01-13 08:21
   - TODO for today: fix shop, implement password change, increase item price every purchase, decrease amount of cookies
                     every purchase
 
+justinS -- 2020-01-13 08:35
+  - worked on shop logic and appearance
+  - dynamic item pricing
+
 kevinL -- 2020-01-13 08:40
   - Password change feature
 
@@ -190,6 +194,13 @@ kevinL -- 2020-01-13 11:40
   - Better looking trial page
   - Better looking CPS box
 
+justinS -- 2020-01-13 16:23
+  - Shop frontend
+  - Reduced shop update delay
+
+justinS -- 2020-01-14
+  - got really sick :(- made work difficult
+
 kelvinN -- 2020-01-14 08:10
   - TODO for today: create better look for login page, add more perks
   - ditching achievement idea for now
@@ -199,6 +210,9 @@ kelvinN -- 2020-01-14 08:39
 
 kevinL -- 2020-01-14 08:40
   - Minor CSS tweaks to beautify the website overall
+
+justinS -- 2020-01-14 08:41
+  - Added tooltip to provide information on perks
 
 kelvinN -- 2020-01-14 13:17
   - bugs:
@@ -213,3 +227,10 @@ kevinL -- 2020-01-14 18:25
   - Decrease cookies when purchasing grandma
   - Negative cookies issue seems to have been fixed (it was due to lowering the amount of cookies in 2 parts of the code)
     - However, it is still possible. We still have an issue where if you click really fast, some cookies don't get registered. This can lead to a single digit negative number.
+
+
+justinS -- 2020-01-14 16:35
+  - improved tooltip display, included perk statistics
+
+justinS -- 2020-01-14 21:53
+  - added mines and farms 
