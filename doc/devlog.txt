@@ -234,3 +234,7 @@ justinS -- 2020-01-14 16:35
 
 justinS -- 2020-01-14 21:53
   - added mines and farms 
+
+kelvinN -- 2020-01-16 23:33
+  - done creating and editing video demo
+  - video demo link added to readme
