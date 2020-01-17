@@ -1,5 +1,7 @@
 # Cookie Clicker by Team POGGERS
 
+[video demo here](https://youtu.be/QTyNxuUw8Fk)
+
 **Roster/Roles**
 - Kelvin Ng:
   - Project Manager
